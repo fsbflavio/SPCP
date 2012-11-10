@@ -1,0 +1,8 @@
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\obj\x86\Debug\SPCP.Util.Properties.Resources.resources
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\obj\x86\Debug\SCPC.Util.dll
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\obj\x86\Debug\SCPC.Util.pdb
