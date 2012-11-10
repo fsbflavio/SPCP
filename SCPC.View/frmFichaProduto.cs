@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SPCP.Controler;
+using SPCP.Controller;
 
 namespace SPCP.View
 {

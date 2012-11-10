@@ -6,7 +6,7 @@ using SPCP.Model;
 using System.Data;
 using Oracle.DataAccess.Client;
 
-namespace SPCP.Controler
+namespace SPCP.Controller
 {
     public class ClienteControl
     {
