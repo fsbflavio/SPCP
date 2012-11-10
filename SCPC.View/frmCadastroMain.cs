@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using SPCP.Controler;
+using SPCP.Controller;
 
 namespace SPCP.View
 {

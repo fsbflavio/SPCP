@@ -6,7 +6,7 @@ using SPCP.Model;
 using System.Data;
 using SPCP.Util;
 
-namespace SPCP.Controler
+namespace SPCP.Controller
 {
     public class ItemEstoqueControl
     {

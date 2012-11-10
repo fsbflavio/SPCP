@@ -108,20 +108,18 @@
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnNovo);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(0, 379);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 308);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1032, 54);
+            this.panel1.Size = new System.Drawing.Size(774, 44);
             this.panel1.TabIndex = 7;
             // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.SystemColors.Control;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExcluir.Location = new System.Drawing.Point(436, 14);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Location = new System.Drawing.Point(327, 11);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(119, 27);
+            this.btnExcluir.Size = new System.Drawing.Size(89, 22);
             this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
@@ -130,10 +128,9 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Location = new System.Drawing.Point(739, 14);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(554, 11);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(119, 27);
+            this.btnCancelar.Size = new System.Drawing.Size(89, 22);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -142,10 +139,9 @@
             // 
             this.btnSalvar.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalvar.Location = new System.Drawing.Point(616, 14);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Location = new System.Drawing.Point(462, 11);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(119, 27);
+            this.btnSalvar.Size = new System.Drawing.Size(89, 22);
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -154,10 +150,9 @@
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.Control;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEditar.Location = new System.Drawing.Point(309, 14);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(232, 11);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(119, 27);
+            this.btnEditar.Size = new System.Drawing.Size(89, 22);
             this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -166,10 +161,9 @@
             // 
             this.btnNovo.BackColor = System.Drawing.SystemColors.Control;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNovo.Location = new System.Drawing.Point(176, 14);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNovo.Location = new System.Drawing.Point(132, 11);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(119, 27);
+            this.btnNovo.Size = new System.Drawing.Size(89, 22);
             this.btnNovo.TabIndex = 12;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
@@ -181,21 +175,19 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(0, 68);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1032, 310);
+            this.tabControl1.Size = new System.Drawing.Size(774, 252);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgPesquisa);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1024, 281);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(766, 226);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Materiais Diretos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -214,12 +206,11 @@
             this.dgTotal,
             this.dgObs});
             this.dgPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgPesquisa.Location = new System.Drawing.Point(4, 4);
-            this.dgPesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgPesquisa.Location = new System.Drawing.Point(3, 3);
             this.dgPesquisa.Name = "dgPesquisa";
             this.dgPesquisa.RowHeadersVisible = false;
             this.dgPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPesquisa.Size = new System.Drawing.Size(1016, 273);
+            this.dgPesquisa.Size = new System.Drawing.Size(760, 220);
             this.dgPesquisa.TabIndex = 5;
             // 
             // dgReg
@@ -266,11 +257,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1024, 281);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(766, 226);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Materiais Secundarios";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -289,12 +279,11 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26});
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(1013, 271);
+            this.dataGridView4.Size = new System.Drawing.Size(760, 220);
             this.dataGridView4.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn4
@@ -341,11 +330,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Size = new System.Drawing.Size(1024, 281);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(766, 226);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Custos Indiretos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -364,12 +352,11 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1013, 271);
+            this.dataGridView2.Size = new System.Drawing.Size(760, 220);
             this.dataGridView2.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn8
@@ -416,11 +403,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dataGridView3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage4.Size = new System.Drawing.Size(1024, 281);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Size = new System.Drawing.Size(766, 226);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Outros Custos";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -439,12 +425,11 @@
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1013, 337);
+            this.dataGridView3.Size = new System.Drawing.Size(760, 274);
             this.dataGridView3.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn15
@@ -491,11 +476,10 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.dataGridView1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Size = new System.Drawing.Size(1024, 281);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Size = new System.Drawing.Size(766, 226);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tributos na Produção";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -512,12 +496,11 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1013, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(760, 220);
             this.dataGridView1.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
@@ -553,38 +536,34 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(473, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(355, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Status:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 17);
+            this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Número Ordem de Produção";
             // 
             // txtPESQUISA
             // 
-            this.txtPESQUISA.Location = new System.Drawing.Point(240, 30);
-            this.txtPESQUISA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPESQUISA.Location = new System.Drawing.Point(180, 24);
             this.txtPESQUISA.Name = "txtPESQUISA";
-            this.txtPESQUISA.Size = new System.Drawing.Size(187, 22);
+            this.txtPESQUISA.Size = new System.Drawing.Size(141, 20);
             this.txtPESQUISA.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(535, 33);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(401, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Em Produção";
             // 
@@ -597,33 +576,30 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtPESQUISA);
             this.panel2.Location = new System.Drawing.Point(0, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1028, 64);
+            this.panel2.Size = new System.Drawing.Size(771, 52);
             this.panel2.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Silver;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1025, 25);
+            this.label4.Size = new System.Drawing.Size(769, 20);
             this.label4.TabIndex = 56;
             this.label4.Text = "Listagem de Custos por ordem de Produção";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmCustosProducao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 433);
+            this.ClientSize = new System.Drawing.Size(774, 352);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmCustosProducao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
