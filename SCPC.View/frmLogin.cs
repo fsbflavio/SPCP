@@ -19,25 +19,36 @@ namespace SPCP.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ValidaCampos();
-            if (txtUsuario.Text == "admin" && txtSenha.Text == "admin")
-            {
-                for (int i = 0; i < 100; i++)
-                {
-                    Thread.Sleep(10);
-                    this.progressBar1.Value = i;
-                }
-                
-                frmMainMDI frmMainMDI = new frmMainMDI();
-                frmMainMDI.Show();
-                this.Hide();
-            }
-            else 
-            {
-                MessageBox.Show("Nome de Usuario ou senha invalidos. Verifique, por favor.", this.Text.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtUsuario.Focus();
-            }
 
+            if (txtUsuario.Text == "trololo")
+            {
+                pictureBox1.Image = SPCP.View.Properties.Resources.easteregg;
+                txtUsuario.Text = "";
+            }
+            else
+            {
+
+                if (txtUsuario.Text == "admin" && txtSenha.Text == "admin")
+                {
+                    for (int i = 0; i < 100; i++)
+                    {
+                        Thread.Sleep(10);
+                        this.progressBar1.Value = i;
+                    }
+
+                    frmMainMDI frmMainMDI = new frmMainMDI();
+                    frmMainMDI.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Nome de Usuario ou senha invalidos. Verifique, por favor.", this.Text.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtSenha.Text = "";
+                    this.txtUsuario.Text = "";
+                    this.txtUsuario.Focus();
+                }
+
+            }
         }
 
         private bool ValidaCampos()
@@ -59,6 +70,7 @@ namespace SPCP.View
                 {
                     MessageBox.Show("A senha do usuário informada é inválida. Verifique, por favor.",
                         this.Text.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
                     this.txtSenha.Focus();
                     return false;
                 }
@@ -76,6 +88,20 @@ namespace SPCP.View
                 return false;
             }
         }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                this.button1_Click(sender, null);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
 
     }
 }

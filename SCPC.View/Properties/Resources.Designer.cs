@@ -60,6 +60,13 @@ namespace SPCP.View.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap easteregg {
+            get {
+                object obj = ResourceManager.GetObject("easteregg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
