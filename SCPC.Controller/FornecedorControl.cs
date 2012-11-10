@@ -7,7 +7,7 @@ using Oracle.DataAccess.Client;
 using System.Collections;
 using SPCP.Model;
 
-namespace SPCP.Controler
+namespace SPCP.Controller
 {
     public class FornecedorControl
     {

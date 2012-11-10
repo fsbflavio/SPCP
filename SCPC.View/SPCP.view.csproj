@@ -256,9 +256,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SCPC.Controler\SPCP.Controler.csproj">
+    <ProjectReference Include="..\SCPC.Controller\SPCP.Controller.csproj">
       <Project>{B2DF4FE2-C4E8-467D-9842-153C1B129432}</Project>
-      <Name>SPCP.Controler</Name>
+      <Name>SPCP.Controller</Name>
     </ProjectReference>
     <ProjectReference Include="..\SCPC.Util\SPCP.Util.csproj">
       <Project>{59FE5BCA-AB6E-4197-BCE4-59BC93B99CA3}</Project>

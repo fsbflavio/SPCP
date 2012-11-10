@@ -1,0 +1,9 @@
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\bin\Debug\SCPC.Model.dll
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\bin\Debug\SCPC.Util.dll
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+D:\Documentos\Danilo\SPCP_Flavio\SCPC.Controler\obj\Debug\SPCP.Controler.pdb

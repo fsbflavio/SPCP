@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using SPCP.Controler;
+using SPCP.Controller;
 using System;
 using SPCP.Util;
 
-namespace SPCP.Controler
+namespace SPCP.Controller
 {
     public class ComboBoxSistema
     {
