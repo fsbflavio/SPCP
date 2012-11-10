@@ -7,9 +7,14 @@ namespace SPCP.Controler
 {
     public class ProdutoControl
     {
-        public void Incluir()
+        public void Incluir(ProdutoDTO p)
         {
  
         }
+
+        public void Alterar(ProdutoDTO p)
+        {
+        }
+
     }
 }
