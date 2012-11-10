@@ -1,0 +1,5 @@
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\bin\Debug\Controler.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\bin\Debug\Controler.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Debug\Controler.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Debug\Controler.pdb

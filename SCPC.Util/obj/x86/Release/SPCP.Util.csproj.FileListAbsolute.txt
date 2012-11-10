@@ -1,0 +1,8 @@
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\bin\Release\SCPC.Util.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\bin\Release\SCPC.Util.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\obj\x86\Release\SCPC.Util.Properties.Resources.resources
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\obj\x86\Release\SCPC.Util.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Util\obj\x86\Release\SCPC.Util.pdb

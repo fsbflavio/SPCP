@@ -1,0 +1,68 @@
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\bin\Debug\Controler.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\bin\Debug\Controler.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Debug\Controler.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Debug\Controler.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Dropbox\Public\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.dll
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\rodrigo\Downloads\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Downloads\SCPC (1)\SCPC\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 2\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Controler\obj\Debug\SPCP.Controler.pdb
