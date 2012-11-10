@@ -1,7 +1,0 @@
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\bin\Debug\SCPC.Model.dll
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\bin\Debug\SCPC.Model.pdb
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\bin\Debug\SCPC.Util.dll
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\bin\Debug\SCPC.Util.pdb
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\obj\Debug\SCPC.Model.dll
-C:\Users\Flavio\Dropbox\Public\UEM\Implementação de Sistemas de Software\SCPC v. 3\SCPC\SCPC.Model\obj\Debug\SCPC.Model.pdb

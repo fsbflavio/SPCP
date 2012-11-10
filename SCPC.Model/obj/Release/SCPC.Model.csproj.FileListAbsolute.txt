@@ -1,5 +1,0 @@
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Model\bin\Release\SCPC.Model.dll
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Model\bin\Release\SCPC.Model.pdb
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Model\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Model\obj\Release\SCPC.Model.dll
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Model\obj\Release\SCPC.Model.pdb

@@ -1,8 +1,0 @@
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\Controler\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Release\SPCP.Controler.dll
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Release\SPCP.Controler.pdb
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Release\SCPC.Model.dll
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\bin\Release\SCPC.Model.pdb
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\obj\Release\SPCP.Controler.dll
-C:\Users\Flavio\Documents\Visual Studio 2010\Projects\SCPC\SCPC.Controler\obj\Release\SPCP.Controler.pdb
