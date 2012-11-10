@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SPCP.Model
+namespace SPCP.Controler
 {
     public class ProdutoControl
     {
+        public void Incluir()
+        {
+ 
+        }
     }
 }

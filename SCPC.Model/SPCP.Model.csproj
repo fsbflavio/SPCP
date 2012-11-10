@@ -51,6 +51,7 @@
     <Compile Include="Fornecedor.cs" />
     <Compile Include="ItemEstoque.cs" />
     <Compile Include="Pessoa.cs" />
+    <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

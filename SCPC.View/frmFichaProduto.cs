@@ -23,11 +23,12 @@ namespace SPCP.View
                 if (ModoOperacao == "E")
                 {
                     ProdutoDTO produtoDTO= new ProdutoDTO();
+                    produtoDTO.Id = id;
                     produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
                     produtoDTO.Nome = this.txtNomeProduto.Text;
 
-                    FornecedorControl fornecedor = new FornecedorControl();
-                    //fornecedor.Alterar(fornecedorDTO);
+                    ProdutoControl produto = new ProdutoControl();
+                    produto.Alterar(produtoDTO);
 
                     ModoOperacao = "";
                     DesativaControles();
@@ -40,11 +41,13 @@ namespace SPCP.View
 
                 if (ModoOperacao == "N")
                 {
-                    //fornecedorDTO.Email = this.txtEMAIL.Text;
+                    ProdutoDTO produtoDTO = new ProdutoDTO();
+                    produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
+                    produtoDTO.Nome = this.txtNomeProduto.Text;
 
-                    FornecedorControl fornecedor = new FornecedorControl();
+                    ProdutoControl produto = new ProdutoControl();
 
-                    //fornecedor.Incluir(fornecedorDTO);
+                    produto.Incluir(produtoDTO);
 
                     ModoOperacao = "";
                     DesativaControles();
