@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 using SPCP.Controller;
 
 namespace SPCP.View
@@ -22,7 +23,7 @@ namespace SPCP.View
             {
                 if (ModoOperacao == "E")
                 {
-                    ProdutoDTO produtoDTO= new ProdutoDTO();
+                    ProdutoDTO produtoDTO = new ProdutoDTO();
                     produtoDTO.Id = id;
                     produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
                     produtoDTO.Nome = this.txtNomeProduto.Text;
@@ -59,8 +60,57 @@ namespace SPCP.View
 
                 Pesquisar(dgPesquisa, this.txtPESQUISA.Text);
                 SistemaEmEspera();
+                InicializarComboBoxes(); //recarregar
             }
         }
 
+        public override bool ValidaCampos()
+        {
+            if (!ValidaPreenchimento(this.txtCodigo))
+                return false;
+            if (!ValidaPreenchimento(this.txtNomeProduto))
+                return false;
+            return true;
+        }
+
+        public override void CarregaDadosControles(int id)
+        {
+            ProdutoControl produto = new ProdutoControl();
+            ProdutoDTO p = produto.GetProduto(id);
+
+            try
+            {
+                this.id = p.Id;
+                this.txtCodigo.Text = p.Codigo.ToString();
+                this.txtNomeProduto.Text = p.Nome.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao carregar dados do Produto: " + e.Message, "Carregamento de dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public override void InicializarComboBoxes()
+        {
+            try
+            {
+                this.cbxProduto.DataSource = ComboBoxSistema.Produtos();
+                this.cbxProduto.ValueMember = "Id";
+                this.cbxProduto.DisplayMember = "Descricao";
+
+                this.cbxProduto.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void cbxProduto_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CarregaDadosControles(Convert.ToInt32(cbxProduto.SelectedValue));
+        }
     }
 }

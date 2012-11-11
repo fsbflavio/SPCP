@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxProduto = new System.Windows.Forms.ComboBox();
             this.tabCadCliente.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
             this.tabCadastro.SuspendLayout();
@@ -44,10 +44,10 @@
             // 
             // tabPesquisa
             // 
-            this.tabPesquisa.Controls.Add(this.comboBox1);
+            this.tabPesquisa.Controls.Add(this.cbxProduto);
             this.tabPesquisa.Controls.SetChildIndex(this.txtPESQUISA, 0);
             this.tabPesquisa.Controls.SetChildIndex(this.button1, 0);
-            this.tabPesquisa.Controls.SetChildIndex(this.comboBox1, 0);
+            this.tabPesquisa.Controls.SetChildIndex(this.cbxProduto, 0);
             this.tabPesquisa.Controls.SetChildIndex(this.label1, 0);
             this.tabPesquisa.Controls.SetChildIndex(this.label4, 0);
             this.tabPesquisa.Controls.SetChildIndex(this.label5, 0);
@@ -138,13 +138,14 @@
             this.txtNomeProduto.Size = new System.Drawing.Size(483, 22);
             this.txtNomeProduto.TabIndex = 0;
             // 
-            // comboBox1
+            // cbxProduto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(142, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(309, 24);
-            this.comboBox1.TabIndex = 58;
+            this.cbxProduto.FormattingEnabled = true;
+            this.cbxProduto.Location = new System.Drawing.Point(142, 51);
+            this.cbxProduto.Name = "cbxProduto";
+            this.cbxProduto.Size = new System.Drawing.Size(309, 24);
+            this.cbxProduto.TabIndex = 58;
+            this.cbxProduto.SelectionChangeCommitted += new System.EventHandler(this.cbxProduto_SelectionChangeCommitted);
             // 
             // frmFichaProduto
             // 
@@ -171,6 +172,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtNomeProduto;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxProduto;
     }
 }

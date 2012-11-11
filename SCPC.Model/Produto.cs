@@ -5,14 +5,17 @@ using System.Text;
 using Oracle.DataAccess.Client;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace SPCP.Model
 {
     public class Produto
     {
         private string strErrMsg;
+        
+        public int Id {get; set;}
         public int Codigo;
-        public string Descricao;
+        public string Descricao {get; set;}
 
         public bool Incluir()
         {
@@ -26,10 +29,10 @@ namespace SPCP.Model
                                 "ID, " +
                                 "CODIGO, " +
                                 "DESCRICAO) " +
-                                "VALUES (PRODUTO.NEXTVAL, :Codigo, :Descricao)";
+                                "VALUES (SQ_ID_PRODUTO.NEXTVAL, :Codigo, :Descricao)";
 
                 cmd.Parameters.Add(":Codigo", OracleDbType.Int32).Value = this.Codigo;
-                cmd.Parameters.Add(":Descricao", OracleDbType.Varchar2, 20).Value = this.Descricao;
+                cmd.Parameters.Add(":Descricao", OracleDbType.Varchar2, 100).Value = this.Descricao;
 
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conn;
@@ -100,11 +103,48 @@ namespace SPCP.Model
             }
         }
 
-        public DataTable CarregarDadosFornecedor(int id)
+        public ArrayList GetProdutos()
         {
-            DataTable dt = new DataTable();
             OracleDataReader dr;
+            OracleConnection conn = Conexao.GetInstance();
+            conn.Open();
 
+            ArrayList array = new ArrayList();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "SELECT * FROM PRODUTO ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+
+            dr = cmd.ExecuteReader();
+
+            Produto p;
+            while (dr.Read())
+            {
+                try
+                {
+                    p = new Produto();
+                    p.Id = Convert.ToInt32(dr["ID"]);
+                    p.Codigo = Convert.ToInt32(dr["CODIGO"]);
+                    p.Descricao = dr.GetString(2);
+                    array.Add(p);
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
+            conn.Close();
+
+            return array;
+        }
+
+
+        public static Produto GetProduto(int id)
+        {
+            OracleDataReader dr;
+            Produto p = new Produto();
             OracleConnection conn = Conexao.GetInstance();
             conn.Open();
 
@@ -115,16 +155,31 @@ namespace SPCP.Model
             cmd.Connection = conn;
 
             dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                try
+                {
+                    p.Id = Convert.ToInt32(dr["ID"]);
+                    p.Codigo = Convert.ToInt32(dr["CODIGO"]);
+                    p.Descricao = dr.GetString(2);
+                }
+                catch (Exception )
+                {
 
-            dt.Load(dr);
+                }
+            }
 
-            //OracleDataAdapter da = new OracleDataAdapter();
-            //da.SelectCommand = cmd;
-            //da.Fill(dt);
             conn.Close();
 
-            return dt;
+            return p;
         }
+
+        public override string ToString()
+        {
+            return this.Descricao;
+        }
+
+
 
     }
 }
