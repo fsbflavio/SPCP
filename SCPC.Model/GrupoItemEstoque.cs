@@ -136,7 +136,6 @@ namespace SPCP.Model
         {
             OracleConnection connection = Conexao.GetInstance();
             OracleDataReader dr;
-            connection.Open();
 
             OracleCommand command = new OracleCommand();
             command.CommandText = "SELECT * FROM GRUPO_ITEM_ESTOQUE WHERE ID = :Id";
@@ -150,9 +149,6 @@ namespace SPCP.Model
             dr.Read();
             grupo.Id = Convert.ToInt32(dr["ID"]);
             grupo.Descricao = dr.GetString(1);
-
-
-            connection.Close();
 
             return grupo;
         }

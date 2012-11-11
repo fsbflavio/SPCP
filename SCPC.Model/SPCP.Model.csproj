@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="FichaProduto.cs" />
     <Compile Include="GrupoItemEstoque.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="ItemEstoque.cs" />

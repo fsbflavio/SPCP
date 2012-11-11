@@ -132,9 +132,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxUnidadeMedida.Controls.Add(this.comboBoxUnidadeMedida);
             this.groupBoxUnidadeMedida.Location = new System.Drawing.Point(4, 270);
-            this.groupBoxUnidadeMedida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxUnidadeMedida.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxUnidadeMedida.Name = "groupBoxUnidadeMedida";
-            this.groupBoxUnidadeMedida.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxUnidadeMedida.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxUnidadeMedida.Size = new System.Drawing.Size(289, 55);
             this.groupBoxUnidadeMedida.TabIndex = 77;
             this.groupBoxUnidadeMedida.TabStop = false;
@@ -145,7 +145,7 @@
             this.comboBoxUnidadeMedida.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxUnidadeMedida.FormattingEnabled = true;
             this.comboBoxUnidadeMedida.Location = new System.Drawing.Point(4, 19);
-            this.comboBoxUnidadeMedida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxUnidadeMedida.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxUnidadeMedida.Name = "comboBoxUnidadeMedida";
             this.comboBoxUnidadeMedida.Size = new System.Drawing.Size(281, 24);
             this.comboBoxUnidadeMedida.TabIndex = 0;
@@ -156,9 +156,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxEstoqueMinimo.Controls.Add(this.textBoxEstoqueMinimo);
             this.groupBoxEstoqueMinimo.Location = new System.Drawing.Point(4, 210);
-            this.groupBoxEstoqueMinimo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxEstoqueMinimo.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEstoqueMinimo.Name = "groupBoxEstoqueMinimo";
-            this.groupBoxEstoqueMinimo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxEstoqueMinimo.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxEstoqueMinimo.Size = new System.Drawing.Size(155, 55);
             this.groupBoxEstoqueMinimo.TabIndex = 75;
             this.groupBoxEstoqueMinimo.TabStop = false;
@@ -167,11 +167,11 @@
             // textBoxEstoqueMinimo
             // 
             this.textBoxEstoqueMinimo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxEstoqueMinimo.Location = new System.Drawing.Point(4, 22);
-            this.textBoxEstoqueMinimo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEstoqueMinimo.Location = new System.Drawing.Point(4, 19);
+            this.textBoxEstoqueMinimo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEstoqueMinimo.MaxLength = 200;
             this.textBoxEstoqueMinimo.Name = "textBoxEstoqueMinimo";
-            this.textBoxEstoqueMinimo.Size = new System.Drawing.Size(145, 22);
+            this.textBoxEstoqueMinimo.Size = new System.Drawing.Size(147, 22);
             this.textBoxEstoqueMinimo.TabIndex = 1;
             this.textBoxEstoqueMinimo.Tag = "Ato de Autorização do Curso";
             // 
@@ -181,9 +181,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxGrupoEstoque.Controls.Add(this.comboBoxGrupoEstoque);
             this.groupBoxGrupoEstoque.Location = new System.Drawing.Point(4, 86);
-            this.groupBoxGrupoEstoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxGrupoEstoque.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxGrupoEstoque.Name = "groupBoxGrupoEstoque";
-            this.groupBoxGrupoEstoque.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxGrupoEstoque.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxGrupoEstoque.Size = new System.Drawing.Size(568, 55);
             this.groupBoxGrupoEstoque.TabIndex = 76;
             this.groupBoxGrupoEstoque.TabStop = false;
@@ -194,7 +194,7 @@
             this.comboBoxGrupoEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxGrupoEstoque.FormattingEnabled = true;
             this.comboBoxGrupoEstoque.Location = new System.Drawing.Point(4, 19);
-            this.comboBoxGrupoEstoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxGrupoEstoque.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxGrupoEstoque.Name = "comboBoxGrupoEstoque";
             this.comboBoxGrupoEstoque.Size = new System.Drawing.Size(560, 24);
             this.comboBoxGrupoEstoque.TabIndex = 0;
@@ -205,9 +205,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Location = new System.Drawing.Point(308, 149);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(0, 55);
             this.groupBox3.TabIndex = 73;
             this.groupBox3.TabStop = false;
@@ -218,7 +218,7 @@
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(4, 19);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(0, 25);
             this.comboBox1.TabIndex = 69;
@@ -229,9 +229,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCodigo.Controls.Add(this.textBoxCodigo);
             this.groupBoxCodigo.Location = new System.Drawing.Point(4, 23);
-            this.groupBoxCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxCodigo.Name = "groupBoxCodigo";
-            this.groupBoxCodigo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxCodigo.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxCodigo.Size = new System.Drawing.Size(124, 55);
             this.groupBoxCodigo.TabIndex = 72;
             this.groupBoxCodigo.TabStop = false;
@@ -240,11 +240,11 @@
             // textBoxCodigo
             // 
             this.textBoxCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCodigo.Location = new System.Drawing.Point(4, 22);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCodigo.Location = new System.Drawing.Point(4, 19);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCodigo.MaxLength = 200;
             this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(115, 22);
+            this.textBoxCodigo.Size = new System.Drawing.Size(116, 22);
             this.textBoxCodigo.TabIndex = 0;
             this.textBoxCodigo.Tag = "Ato de Autorização do Curso";
             // 
@@ -254,9 +254,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxDescricao.Controls.Add(this.txtDescricao);
             this.groupBoxDescricao.Location = new System.Drawing.Point(4, 149);
-            this.groupBoxDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxDescricao.Name = "groupBoxDescricao";
-            this.groupBoxDescricao.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDescricao.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxDescricao.Size = new System.Drawing.Size(568, 55);
             this.groupBoxDescricao.TabIndex = 74;
             this.groupBoxDescricao.TabStop = false;
@@ -265,11 +265,11 @@
             // txtDescricao
             // 
             this.txtDescricao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescricao.Location = new System.Drawing.Point(4, 22);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricao.Location = new System.Drawing.Point(4, 19);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.MaxLength = 200;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(559, 22);
+            this.txtDescricao.Size = new System.Drawing.Size(560, 22);
             this.txtDescricao.TabIndex = 1;
             this.txtDescricao.Tag = "Ato de Autorização do Curso";
             // 
@@ -279,9 +279,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox13.Controls.Add(this.dateTimePicker1);
             this.groupBox13.Location = new System.Drawing.Point(159, 149);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox13.Size = new System.Drawing.Size(0, 55);
             this.groupBox13.TabIndex = 71;
             this.groupBox13.TabStop = false;
@@ -292,7 +292,7 @@
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(4, 19);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(0, 22);
             this.dateTimePicker1.TabIndex = 0;

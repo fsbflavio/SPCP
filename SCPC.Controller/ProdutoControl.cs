@@ -37,7 +37,7 @@ namespace SPCP.Controller
             return produto.Excluir(Id);
         }
 
-        public ProdutoDTO GetProduto(int id)
+        public ProdutoDTO GetProduto(int id) //subistituiu o CarregaDados
         {
             Produto p = Produto.GetProduto(id);
             ProdutoDTO produtoDTO = new ProdutoDTO();

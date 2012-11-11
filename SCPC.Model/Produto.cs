@@ -22,8 +22,6 @@ namespace SPCP.Model
             OracleConnection conn = Conexao.GetInstance();
             try
             {
-                conn.Open();
-
                 OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = "INSERT INTO PRODUTO (" +
                                 "ID, " +
@@ -55,7 +53,6 @@ namespace SPCP.Model
         public void Alterar(int id)
         {
             OracleConnection conn = Conexao.GetInstance();
-            conn.Open();
 
             OracleCommand cmd = new OracleCommand();
             cmd.CommandText = "UPDATE PRODUTO SET " +
@@ -79,8 +76,6 @@ namespace SPCP.Model
             OracleConnection conn = Conexao.GetInstance();
             try
             {
-                conn.Open();
-
                 OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = "DELETE FROM PRODUTO WHERE ID = :Id";
 
@@ -107,7 +102,6 @@ namespace SPCP.Model
         {
             OracleDataReader dr;
             OracleConnection conn = Conexao.GetInstance();
-            conn.Open();
 
             ArrayList array = new ArrayList();
 
@@ -146,7 +140,6 @@ namespace SPCP.Model
             OracleDataReader dr;
             Produto p = new Produto();
             OracleConnection conn = Conexao.GetInstance();
-            conn.Open();
 
             OracleCommand cmd = new OracleCommand();
             cmd.CommandText = "SELECT * FROM PRODUTO WHERE ID = :Id";

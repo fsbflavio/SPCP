@@ -201,7 +201,7 @@ namespace SPCP.View
         {
             // remover isso e inicializar do banco quando o cadastro estiver pronto
             this.comboBoxUnidadeMedida.Items.AddRange(ComboBoxSistema.unidadesMedida());
-            this.comboBoxGrupoEstoque.Items.AddRange(ComboBoxSistema.gruposItemEstoque());
+            this.comboBoxGrupoEstoque.DataSource = ComboBoxSistema.gruposItemEstoque();
         }
     }
 }

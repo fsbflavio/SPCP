@@ -11,11 +11,12 @@ namespace SPCP.Controller
     public class ComboBoxSistema
     {
 
-        public static Object[] gruposItemEstoque()
+        public static ArrayList gruposItemEstoque()
         {
-            Object[] grupos = new Object[] {
-                new ComboBoxItem(1, "Oi"),
-                new ComboBoxItem(2, "Bah")
+            ArrayList grupos = new ArrayList {
+                new ComboBoxItem(1, "Materiais Diretos"),
+                new ComboBoxItem(2, "Materiais Indiretos"),
+                new ComboBoxItem(2, "Materiais Secundários")
             };
             
             return grupos;
@@ -41,6 +42,12 @@ namespace SPCP.Controller
             return array;
         }
 
+        public static ArrayList ItensEstoque()
+        {
+            ItemEstoque i = new ItemEstoque();
+            ArrayList array = i.GetItensEstoque();
+            return array;
+        }
 
 
     }

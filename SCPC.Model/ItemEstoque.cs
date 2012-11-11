@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using Oracle.DataAccess.Client;
+using System.Collections;
 using SPCP.Util;
 
 namespace SPCP.Model
 {
     public class ItemEstoque
     {
-        public int Id;
-        public String Descricao;
+        public int Id {get; set; }
+        public String Descricao {get; set;}
         public int EstoqueMinimo;
         public UnidadeMedida UnidadeMedida;
         public GrupoItemEstoque GrupoItemEstoque;
@@ -123,12 +124,49 @@ namespace SPCP.Model
             dr = cmd.ExecuteReader();
 
             dt.Load(dr);
-            //OracleDataAdapter da = new OracleDataAdapter();
+            OracleDataAdapter da = new OracleDataAdapter();
             //da.SelectCommand = cmd;
-            //da.Fill(dt);
+            da.Fill(dt);
             conn.Close();
 
             return dt;
+        }
+
+        public ArrayList GetItensEstoque()
+        {
+            ItemEstoque item;
+            ArrayList array = new ArrayList();
+
+            OracleDataReader dr;
+            OracleConnection conn = Conexao.GetInstance();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.CommandText = "SELECT * FROM ITEM_ESTOQUE ";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    item = new ItemEstoque();
+
+                    item.Id = Convert.ToInt32(dr["ID_ITEM"]);
+                    item.Descricao = (string)dr["DESCRICAO"];
+                    item.UnidadeMedida = (UnidadeMedida)Convert.ToInt32(dr["UNIDADE_MEDIDA"]);
+                    item.EstoqueMinimo = (int)dr["ESTOQUE_MINIMO"];
+                    item.GrupoItemEstoque = GrupoItemEstoque.FindById(Convert.ToInt32(dr["ID_GRUPO"]));
+
+                    array.Add(item);
+                }
+            }
+            catch (Exception e)
+            {
+ 
+            }
+
+            return array;
         }
 
     }

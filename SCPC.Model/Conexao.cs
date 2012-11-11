@@ -19,6 +19,14 @@ namespace SPCP.Model
                 {
                     pConnection = new OracleConnection();
                     pConnection.ConnectionString = "Data Source=SPCP;Persist Security Info=True;User ID=SPCP;Password=SPCP#XYFJL127TT4MCINLUK;";
+                    pConnection.Open();
+                }
+                else
+                {
+                    if (pConnection.State == System.Data.ConnectionState.Closed)
+                    {
+                        pConnection.Open();
+                    }
                 }
             }
             catch (OracleException ex)

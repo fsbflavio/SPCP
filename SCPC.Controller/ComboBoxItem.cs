@@ -7,8 +7,8 @@ namespace SPCP.Controller
 {
     public class ComboBoxItem
     {
-        public int id;
-        public String descricao;
+        public int id {get; set;}
+        public String descricao { get; set; }
 
         public ComboBoxItem(int id, String descricao)
         {

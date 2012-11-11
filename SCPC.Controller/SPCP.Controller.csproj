@@ -49,9 +49,11 @@
     <Compile Include="ComboBoxItem.cs" />
     <Compile Include="ComboBoxSistema.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
+    <Compile Include="DTO\FichaProdutoDTO.cs" />
     <Compile Include="DTO\FornecedorDTO.cs" />
     <Compile Include="DTO\ItemEstoqueDTO.cs" />
     <Compile Include="DTO\ProdutoDTO.cs" />
+    <Compile Include="FichaProdutoControl.cs" />
     <Compile Include="FornecedorControl.cs" />
     <Compile Include="ItemEstoqueControl.cs" />
     <Compile Include="Pesquisa.cs" />

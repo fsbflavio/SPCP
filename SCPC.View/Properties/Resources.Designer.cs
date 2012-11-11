@@ -60,6 +60,20 @@ namespace SPCP.View.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap camera_test {
+            get {
+                object obj = ResourceManager.GetObject("camera_test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap delete_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("delete_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap easteregg {
             get {
                 object obj = ResourceManager.GetObject("easteregg", resourceCulture);
