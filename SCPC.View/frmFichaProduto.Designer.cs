@@ -310,10 +310,12 @@
             // 
             // dgMateriais
             // 
+            this.dgMateriais.AllowUserToAddRows = false;
             this.dgMateriais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMateriais.Location = new System.Drawing.Point(4, 87);
             this.dgMateriais.Name = "dgMateriais";
             this.dgMateriais.RowTemplate.Height = 24;
+            this.dgMateriais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMateriais.Size = new System.Drawing.Size(1023, 255);
             this.dgMateriais.TabIndex = 0;
             // 

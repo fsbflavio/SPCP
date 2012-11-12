@@ -198,8 +198,6 @@ namespace SPCP.View
             row["QTD"] = txtQtd.Text;
             row["OBSERVACOES"] = txtObservacoes.Text;
 
-
-
             dt.Rows.Add(row);
             
         }
