@@ -193,7 +193,11 @@ namespace SPCP.View
         {
             DataRow row = dt.NewRow(); // Cria a nova Linha com as colunas da tabela[0]
             row["ID_ITEM"] = cbxItem.SelectedValue;
-            //row["ID_CURSO"] = cbxCURSO_PROFESSOR.SelectedValue;
+            row["DESCRICAO"] = cbxItem.SelectedValue;
+            row["QTD"] = cbxItem.SelectedValue;
+            row["OBSERVACOES"] = cbxItem.SelectedValue;
+
+
 
             dt.Rows.Add(row);
             

@@ -46,7 +46,6 @@
             this.cbxGrupo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgMateriais = new System.Windows.Forms.DataGridView();
-            this.column = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabCadCliente.SuspendLayout();
             this.tabPesquisa.SuspendLayout();
             this.tabCadastro.SuspendLayout();
@@ -312,21 +311,11 @@
             // dgMateriais
             // 
             this.dgMateriais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMateriais.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.column});
             this.dgMateriais.Location = new System.Drawing.Point(4, 87);
             this.dgMateriais.Name = "dgMateriais";
             this.dgMateriais.RowTemplate.Height = 24;
             this.dgMateriais.Size = new System.Drawing.Size(1023, 255);
             this.dgMateriais.TabIndex = 0;
-            // 
-            // column
-            // 
-            this.column.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.column.HeaderText = "U. M.";
-            this.column.Name = "column";
-            this.column.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmFichaProduto
             // 
@@ -375,6 +364,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn column;
     }
 }
