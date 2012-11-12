@@ -35,9 +35,9 @@
             this.cbxProduto = new System.Windows.Forms.ComboBox();
             this.tabCustos = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtObservacoes = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQtd = new System.Windows.Forms.TextBox();
             this.bttnExcluirDgCursos = new System.Windows.Forms.Button();
             this.bttnAddDgCursos = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -195,7 +195,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Controls.Add(this.txtObservacoes);
             this.groupBox6.Location = new System.Drawing.Point(617, 31);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(290, 48);
@@ -203,17 +203,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Observações";
             // 
-            // textBox2
+            // txtObservacoes
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(3, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(284, 22);
-            this.textBox2.TabIndex = 0;
+            this.txtObservacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtObservacoes.Location = new System.Drawing.Point(3, 18);
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.Size = new System.Drawing.Size(284, 22);
+            this.txtObservacoes.TabIndex = 0;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.txtQtd);
             this.groupBox5.Location = new System.Drawing.Point(547, 31);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(67, 48);
@@ -221,13 +221,13 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Qtd";
             // 
-            // textBox1
+            // txtQtd
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(61, 22);
-            this.textBox1.TabIndex = 0;
+            this.txtQtd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtQtd.Location = new System.Drawing.Point(3, 18);
+            this.txtQtd.Name = "txtQtd";
+            this.txtQtd.Size = new System.Drawing.Size(61, 22);
+            this.txtQtd.TabIndex = 0;
             // 
             // bttnExcluirDgCursos
             // 
@@ -361,8 +361,8 @@
         private System.Windows.Forms.ComboBox cbxGrupo;
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQtd;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtObservacoes;
     }
 }

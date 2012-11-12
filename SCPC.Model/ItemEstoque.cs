@@ -169,5 +169,9 @@ namespace SPCP.Model
             return array;
         }
 
+        public override string ToString()
+        {
+            return this.Descricao;
+        }
     }
 }
