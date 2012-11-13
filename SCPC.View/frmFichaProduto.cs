@@ -14,6 +14,7 @@ namespace SPCP.View
     public partial class frmFichaProduto : SPCP.View.frmCadastroMain
     {
         DataTable dt;
+        ArrayList itens = new ArrayList();
 
         public frmFichaProduto()
         {
@@ -24,6 +25,8 @@ namespace SPCP.View
         {
             if (ValidaCampos())
             {
+                ProdutoControl produto = new ProdutoControl();
+
                 if (ModoOperacao == "E")
                 {
                     ProdutoDTO produtoDTO = new ProdutoDTO();
@@ -31,7 +34,6 @@ namespace SPCP.View
                     produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
                     produtoDTO.Nome = this.txtNomeProduto.Text;
 
-                    ProdutoControl produto = new ProdutoControl();
                     produto.Alterar(produtoDTO);
 
                     ModoOperacao = "";
@@ -49,8 +51,6 @@ namespace SPCP.View
                     produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
                     produtoDTO.Nome = this.txtNomeProduto.Text;
 
-                    ProdutoControl produto = new ProdutoControl();
-
                     produto.Incluir(produtoDTO);
 
                     ModoOperacao = "";
@@ -64,7 +64,16 @@ namespace SPCP.View
                 Pesquisar(dgPesquisa, this.txtPESQUISA.Text);
                 SistemaEmEspera();
                 InicializarComboBoxes(); //recarregar
+
+                //teste
+                FichaProdutoControl ficha = new FichaProdutoControl();
+                ficha.SalvaGrid(itens);
             }
+        }
+
+        public void SalvaGrid(DataTable dt)
+        {
+           
         }
 
         public override bool ValidaCampos()
@@ -193,12 +202,21 @@ namespace SPCP.View
         {
             DataRow row = dt.NewRow(); // Cria a nova Linha com as colunas da tabela[0]
             row["ID_ITEM"] = cbxItem.SelectedValue;
-            row["ID_PRODUTO"] = cbxItem.SelectedValue;
+            row["ID_PRODUTO"] = cbxProduto.SelectedValue;
             row["DESCRICAO"] = cbxItem.SelectedItem;
             row["QTD"] = txtQtd.Text;
             row["OBSERVACOES"] = txtObservacoes.Text;
 
             dt.Rows.Add(row);
+
+            FichaProdutoDTO p = new FichaProdutoDTO();
+            p.IdItemEstoque = (int)cbxItem.SelectedValue;
+            p.IdProduto = (int)cbxProduto.SelectedValue;
+            p.Qtd = Convert.ToInt32(txtQtd.Text);
+            p.Observacao = txtObservacoes.Text;
+
+
+            itens.Add(p);
             
         }
     }

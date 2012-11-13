@@ -1,9 +1,0 @@
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\bin\Debug\SPCP.Controler.dll
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\bin\Debug\SPCP.Controler.pdb
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\bin\Debug\SCPC.Model.dll
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\bin\Debug\SCPC.Util.dll
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\bin\Debug\SCPC.Model.pdb
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\bin\Debug\SCPC.Util.pdb
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\obj\Debug\SPCP.Controler.dll
-C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controler\obj\Debug\SPCP.Controler.pdb

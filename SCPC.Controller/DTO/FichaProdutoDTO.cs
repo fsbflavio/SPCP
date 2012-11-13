@@ -11,6 +11,6 @@ namespace SPCP.Controller
         public int IdItemEstoque;
         public int IdProduto;
         public int Qtd;
-        public int Observacao;
+        public string Observacao;
     }
 }
