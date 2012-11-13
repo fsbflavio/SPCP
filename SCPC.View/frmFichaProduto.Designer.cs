@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
-            this.cbxProduto = new System.Windows.Forms.ComboBox();
             this.tabCustos = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
@@ -71,14 +70,7 @@
             // 
             // tabPesquisa
             // 
-            this.tabPesquisa.Controls.Add(this.cbxProduto);
             this.tabPesquisa.Size = new System.Drawing.Size(1034, 348);
-            this.tabPesquisa.Controls.SetChildIndex(this.txtPESQUISA, 0);
-            this.tabPesquisa.Controls.SetChildIndex(this.button1, 0);
-            this.tabPesquisa.Controls.SetChildIndex(this.cbxProduto, 0);
-            this.tabPesquisa.Controls.SetChildIndex(this.label1, 0);
-            this.tabPesquisa.Controls.SetChildIndex(this.label4, 0);
-            this.tabPesquisa.Controls.SetChildIndex(this.label5, 0);
             // 
             // tabCadastro
             // 
@@ -114,21 +106,10 @@
             // 
             this.label5.Text = "Produto";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(458, 47);
-            this.button1.Visible = false;
-            // 
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.Text = "Nome Produto";
-            // 
-            // txtPESQUISA
-            // 
-            this.txtPESQUISA.Location = new System.Drawing.Point(580, 55);
-            this.txtPESQUISA.Size = new System.Drawing.Size(32, 22);
-            this.txtPESQUISA.Visible = false;
             // 
             // txtCodigo
             // 
@@ -165,15 +146,6 @@
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(483, 22);
             this.txtNomeProduto.TabIndex = 0;
-            // 
-            // cbxProduto
-            // 
-            this.cbxProduto.FormattingEnabled = true;
-            this.cbxProduto.Location = new System.Drawing.Point(142, 51);
-            this.cbxProduto.Name = "cbxProduto";
-            this.cbxProduto.Size = new System.Drawing.Size(309, 24);
-            this.cbxProduto.TabIndex = 58;
-            this.cbxProduto.SelectionChangeCommitted += new System.EventHandler(this.cbxProduto_SelectionChangeCommitted);
             // 
             // tabCustos
             // 
@@ -303,7 +275,7 @@
             this.label2.Location = new System.Drawing.Point(0, 3);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1027, 25);
+            this.label2.Size = new System.Drawing.Size(1031, 25);
             this.label2.TabIndex = 58;
             this.label2.Text = "Materiais Diretos, Indiretos, Secundários";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,9 +286,10 @@
             this.dgMateriais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMateriais.Location = new System.Drawing.Point(4, 87);
             this.dgMateriais.Name = "dgMateriais";
+            this.dgMateriais.RowHeadersVisible = false;
             this.dgMateriais.RowTemplate.Height = 24;
             this.dgMateriais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgMateriais.Size = new System.Drawing.Size(1023, 255);
+            this.dgMateriais.Size = new System.Drawing.Size(1027, 255);
             this.dgMateriais.TabIndex = 0;
             // 
             // frmFichaProduto
@@ -352,7 +325,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtNomeProduto;
-        private System.Windows.Forms.ComboBox cbxProduto;
         private System.Windows.Forms.TabPage tabCustos;
         private System.Windows.Forms.DataGridView dgMateriais;
         private System.Windows.Forms.Button bttnExcluirDgCursos;

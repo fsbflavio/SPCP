@@ -13,7 +13,6 @@ namespace SPCP.View
 {
     public partial class frmFichaProduto : SPCP.View.frmCadastroMain
     {
-        DataTable dt;
         ArrayList itens = new ArrayList();
 
         public frmFichaProduto()
@@ -32,7 +31,7 @@ namespace SPCP.View
                     ProdutoDTO produtoDTO = new ProdutoDTO();
                     produtoDTO.Id = id;
                     produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
-                    produtoDTO.Nome = this.txtNomeProduto.Text;
+                    produtoDTO.Descricao = this.txtNomeProduto.Text;
 
                     produto.Alterar(produtoDTO);
 
@@ -49,7 +48,7 @@ namespace SPCP.View
                 {
                     ProdutoDTO produtoDTO = new ProdutoDTO();
                     produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
-                    produtoDTO.Nome = this.txtNomeProduto.Text;
+                    produtoDTO.Descricao = this.txtNomeProduto.Text;
 
                     produto.Incluir(produtoDTO);
 
@@ -71,11 +70,6 @@ namespace SPCP.View
             }
         }
 
-        public void SalvaGrid(DataTable dt)
-        {
-           
-        }
-
         public override bool ValidaCampos()
         {
             if (!ValidaPreenchimento(this.txtCodigo))
@@ -85,67 +79,96 @@ namespace SPCP.View
             return true;
         }
 
-
-        public void CarregaDataGrid(DataGridView dg, int id)
+        public override void Pesquisar(DataGridView dg, string nome)
         {
-            FichaProdutoControl ficha = new FichaProdutoControl();
-            dt = ficha.CarregaGrid(id);
+            ProdutoControl pControl = new ProdutoControl();
+            //dg.DataSource = pControl.GetProdutos();
 
             //popula o datagrid retornado
             dg.RowsDefaultCellStyle.BackColor = Color.White;
             dg.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
             dg.EnableHeadersVisualStyles = true;
-            dg.DataSource = dt;
-            
+            dg.DataSource = pControl.GetProdutos();
+
             //formata as colunas do datagrid
-            dg.Columns["ID"].HeaderText = "Reg. nº"; //Nome coluna
-            dg.Columns["ID"].Width = 80; //largura coluna
-            dg.Columns["ID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["ID"].ToolTipText = "Número do Registro";
-            dg.Columns["ID"].DefaultCellStyle.Format = "0000000";
-            dg.Columns["ID"].Visible = false;
+            dg.Columns["Id"].HeaderText = "Reg. nº"; //Nome coluna
+            dg.Columns["Id"].Width = 78; //largura coluna
+            dg.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Id"].ToolTipText = "Número do Registro";
+            dg.Columns["Id"].DefaultCellStyle.Format = "0000000";
+            dg.Columns["Id"].Visible = true;
 
-            dg.Columns["ID_ITEM"].HeaderText = "Reg. nº"; //Nome coluna
-            dg.Columns["ID_ITEM"].Width = 80; //largura coluna
-            dg.Columns["ID_ITEM"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["ID_ITEM"].ToolTipText = "Número do Registro";
-            dg.Columns["ID_ITEM"].Visible = true;
+            dg.Columns["Codigo"].HeaderText = "Código"; //Nome coluna
+            dg.Columns["Codigo"].Width = 100; //largura coluna
+            dg.Columns["Codigo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Codigo"].ToolTipText = "Codigo do Produto";
+            dg.Columns["Codigo"].Visible = true;
 
-            dg.Columns["ID_PRODUTO"].HeaderText = "CNPJ"; //Nome coluna
-            dg.Columns["ID_PRODUTO"].Width = 150; //largura coluna
-            dg.Columns["ID_PRODUTO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["ID_PRODUTO"].ToolTipText = "CNPJ do CLIENTE";
-            dg.Columns["ID_PRODUTO"].Visible = false;
+            dg.Columns["Descricao"].HeaderText = "Descrição"; //Nome coluna
+            dg.Columns["Descricao"].Width = 845; //largura coluna
+            dg.Columns["Descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Descricao"].ToolTipText = "Descrição do Produto";
+            dg.Columns["Descricao"].Visible = true;
 
-            dg.Columns["DESCRICAO"].HeaderText = "Descrição"; //Nome coluna
-            dg.Columns["DESCRICAO"].Width = 150; //largura coluna
-            dg.Columns["DESCRICAO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["DESCRICAO"].ToolTipText = "Descrição do Item";
-            dg.Columns["DESCRICAO"].Visible = true;
+            dg.Refresh();
+        }
 
-            dg.Columns["UNIDADE_MEDIDA"].HeaderText = "U.M."; //Nome coluna
-            dg.Columns["UNIDADE_MEDIDA"].Width = 100; //largura coluna
-            dg.Columns["UNIDADE_MEDIDA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["UNIDADE_MEDIDA"].ToolTipText = "Unidade de Medida";
-            dg.Columns["UNIDADE_MEDIDA"].Visible = true;
+        public void CarregaDataGridCustos(DataGridView dg, int id)
+        {
+            FichaProdutoControl ficha = new FichaProdutoControl();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ficha.GetFicha(id);
 
-            dg.Columns["QTD"].HeaderText = "QTD"; //Nome coluna
-            dg.Columns["QTD"].Width = 100; //largura coluna
-            dg.Columns["QTD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["QTD"].ToolTipText = "Quantidade";
-            dg.Columns["QTD"].Visible = true;
+            if (bs.Count <= 0) //trata o caso q a busca é vazia. evita q os cabeçalhos sumam.
+            {
+                bs.Clear();
+                dg.DataSource = bs;
+                return;
+            }
 
-            dg.Columns["OBSERVACOES"].HeaderText = "Observações"; //Nome coluna
-            dg.Columns["OBSERVACOES"].Width = 200; //largura coluna
-            dg.Columns["OBSERVACOES"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["OBSERVACOES"].ToolTipText = "Observações";
-            dg.Columns["OBSERVACOES"].Visible = true;
+            
+            
+            //popula o datagrid retornado
+            dg.RowsDefaultCellStyle.BackColor = Color.White;
+            dg.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dg.EnableHeadersVisualStyles = true;
+            dg.DataSource = bs;
+
+            //formata as colunas do datagrid
+            dg.Columns["Id"].HeaderText = "Reg. nº"; //Nome coluna
+            dg.Columns["Id"].Width = 78; //largura coluna
+            dg.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Id"].ToolTipText = "Número do Registro";
+            dg.Columns["Id"].DefaultCellStyle.Format = "0000000";
+            dg.Columns["Id"].Visible = true;
+
+            dg.Columns["Item"].HeaderText = "Descrição"; //Nome coluna
+            dg.Columns["Item"].Width = 400; //largura coluna
+            dg.Columns["Item"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Item"].ToolTipText = "Descrição Item";
+            dg.Columns["Item"].Visible = true;
+
+            dg.Columns["Produto"].HeaderText = "Produto"; //Nome coluna
+            dg.Columns["Produto"].Width = 845; //largura coluna
+            dg.Columns["Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Produto"].ToolTipText = "Produto";
+            dg.Columns["Produto"].Visible = false;
+
+            dg.Columns["Qtd"].HeaderText = "QTD"; //Nome coluna
+            dg.Columns["Qtd"].Width = 80; //largura coluna
+            dg.Columns["Qtd"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Qtd"].ToolTipText = "Quantidade";
+            dg.Columns["Qtd"].Visible = true;
+
+            dg.Columns["Observacao"].HeaderText = "Observações"; //Nome coluna
+            dg.Columns["Observacao"].Width = 465; //largura coluna
+            dg.Columns["Observacao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dg.Columns["Observacao"].ToolTipText = "Observações";
+            dg.Columns["Observacao"].Visible = true;
 
             dg.Refresh();
 
-            //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
             return;
-
         }
 
         public override void CarregaDadosControles(int id)
@@ -157,9 +180,10 @@ namespace SPCP.View
             {
                 this.id = p.Id;
                 this.txtCodigo.Text = p.Codigo.ToString();
-                this.txtNomeProduto.Text = p.Nome.ToString();
+                this.txtNomeProduto.Text = p.Descricao.ToString();
 
-                CarregaDataGrid(dgMateriais, id); // Carrega os materiais de um produto no grid
+                
+                CarregaDataGridCustos(dgMateriais, id); // Carrega os materiais de um produto no grid
             }
             catch (Exception e)
             {
@@ -171,11 +195,6 @@ namespace SPCP.View
         {
             try
             {
-                this.cbxProduto.DataSource = ComboBoxSistema.Produtos();
-                this.cbxProduto.ValueMember = "Id";
-                this.cbxProduto.DisplayMember = "Descricao";
-                this.cbxProduto.SelectedIndex = -1;
-
                 this.cbxGrupo.DataSource = ComboBoxSistema.gruposItemEstoque();
                 this.cbxGrupo.ValueMember = "id";
                 this.cbxGrupo.DisplayMember = "descricao";
@@ -193,30 +212,31 @@ namespace SPCP.View
 
         }
 
-        private void cbxProduto_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            CarregaDadosControles(Convert.ToInt32(cbxProduto.SelectedValue));
-        }
-
         private void bttnAddDgCursos_Click(object sender, EventArgs e)
         {
-            DataRow row = dt.NewRow(); // Cria a nova Linha com as colunas da tabela[0]
-            row["ID_ITEM"] = cbxItem.SelectedValue;
-            row["ID_PRODUTO"] = cbxProduto.SelectedValue;
-            row["DESCRICAO"] = cbxItem.SelectedItem;
-            row["QTD"] = txtQtd.Text;
-            row["OBSERVACOES"] = txtObservacoes.Text;
+            //DataRow row = dt.NewRow(); // Cria a nova Linha com as colunas da tabela[0]
+            //row["ID_ITEM"] = cbxItem.SelectedValue;
+            //row["ID_PRODUTO"] = cbxProduto.SelectedValue;
+            //row["DESCRICAO"] = cbxItem.SelectedItem;
+            //row["QTD"] = txtQtd.Text;
+            //row["OBSERVACOES"] = txtObservacoes.Text;
 
-            dt.Rows.Add(row);
+            //dt.Rows.Add(row);
 
             FichaProdutoDTO p = new FichaProdutoDTO();
-            p.IdItemEstoque = (int)cbxItem.SelectedValue;
-            p.IdProduto = (int)cbxProduto.SelectedValue;
+            p.Item = (ItemEstoqueDTO)cbxItem.SelectedItem;
+            p.Produto.Id = this.id;
             p.Qtd = Convert.ToInt32(txtQtd.Text);
             p.Observacao = txtObservacoes.Text;
 
 
             itens.Add(p);
+
+            
+            BindingSource bs = new BindingSource();
+            
+            bs.DataSource = itens;
+            dgMateriais.DataSource = bs;
             
         }
     }

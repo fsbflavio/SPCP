@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Collections;
 using SPCP.Model;
 
 namespace SPCP.Controller
@@ -14,7 +15,7 @@ namespace SPCP.Controller
         public void Incluir(ProdutoDTO p)
         {
             produto.Codigo = p.Codigo;
-            produto.Descricao = p.Nome;
+            produto.Descricao = p.Descricao;
 
             produto.Incluir();
         }
@@ -22,15 +23,11 @@ namespace SPCP.Controller
         public void Alterar(ProdutoDTO p)
         {
             produto.Codigo = p.Codigo;
-            produto.Descricao = p.Nome;
+            produto.Descricao = p.Descricao;
 
             produto.Alterar(p.Id);
         }
 
-        //public DataTable CarregarDados(int id)
-        //{
-        //    return produto.CarregarDados(id);
-        //}
         
         public bool Excluir(int Id)
         {
@@ -43,10 +40,30 @@ namespace SPCP.Controller
             ProdutoDTO produtoDTO = new ProdutoDTO();
             produtoDTO.Id = p.Id;
             produtoDTO.Codigo = p.Codigo;
-            produtoDTO.Nome = p.Descricao;
+            produtoDTO.Descricao = p.Descricao;
 
             return produtoDTO;
         }
 
+        public ArrayList GetProdutos() //cria um array de dto .. porque não enviar direto um array de Produto?
+        {
+            ArrayList produtos;
+            ArrayList produtosDTO = new ArrayList();
+
+            produtos = Produto.GetProdutos();
+
+            foreach (Produto p in produtos)
+            {
+                produtosDTO.Add(
+                    new ProdutoDTO()
+                    {
+                        Id = p.Id,
+                        Codigo = p.Codigo,
+                        Descricao = p.Descricao
+                    });
+            }
+
+            return produtosDTO;
+        }
     }
 }

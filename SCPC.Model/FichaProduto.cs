@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections;
 using Oracle.DataAccess.Client;
 
 namespace SPCP.Model
@@ -13,31 +14,62 @@ namespace SPCP.Model
         private string strErrMsg;
 
         public int Id;
-        public int IdItemEstoque;
-        public int IdProduto;
+        public ItemEstoque itemEstoque;
+        public Produto produto;
         public int Qtd;
         public string Observacao;
 
-        public DataTable CarregaGrid(int id)
+        public FichaProduto()
         {
-            DataTable dt = new DataTable();
+            this.Id = 0;
+            this.itemEstoque = new ItemEstoque();
+            this.produto = new Produto();
+            this.Qtd = 0;
+            this.Observacao = string.Empty;
+        }
+
+        public static ArrayList GetFichaProduto(int id) //isso deverria ser um objeto so ao invez de um array?
+        {
+            FichaProduto ficha;
+            ArrayList array = new ArrayList();
+            OracleDataReader dr;
             OracleConnection conn = Conexao.GetInstance();
 
-            OracleCommand cmd = new OracleCommand();
-            cmd.CommandText = "SELECT A.ID, A.ID_ITEM, A.ID_PRODUTO, B.DESCRICAO, B.UNIDADE_MEDIDA, A.QTD, A.OBSERVACOES " +
-                                "FROM FICHA_PRODUTO A, ITEM_ESTOQUE B " +
-                                "WHERE (A.ID_ITEM = B.ID_ITEM) AND (A.ID_PRODUTO = :Id) ";
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.CommandText = "SELECT * " +
+                                    "FROM FICHA_PRODUTO " +
+                                    "WHERE (ID_PRODUTO = :Id) ";
 
-            cmd.Parameters.Add(":Id", OracleDbType.Int32).Value = id;
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = conn;
+                cmd.Parameters.Add(":Id", OracleDbType.Int32).Value = id;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
 
-            OracleDataAdapter da = new OracleDataAdapter();
-            da.SelectCommand = cmd;
-            da.Fill(dt);
-            conn.Close();
+                dr = cmd.ExecuteReader();
 
-            return dt;
+                while (dr.Read())
+                {
+                    ficha = new FichaProduto();
+                    ficha.Id = Convert.ToInt32(dr["ID"]);
+                    ficha.itemEstoque = ItemEstoque.GetItemEstoque(Convert.ToInt32(dr["ID_ITEM"]));
+                    ficha.produto = Produto.GetProduto(Convert.ToInt32(dr["ID_PRODUTO"]));
+                    ficha.Qtd = Convert.ToInt32(dr[3]);
+                    ficha.Observacao = dr.GetString(4);
+
+                    array.Add(ficha);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return array;
         }
 
         public bool Incluir()
@@ -52,12 +84,49 @@ namespace SPCP.Model
                                 "ID_PRODUTO, " +
                                 "QTD, " +
                                 "OBSERVACOES) " +
-                                "VALUES (SQ_ID_PRODUTO.NEXTVAL, :IdItem, :IdProduto, :Qtd, :Observacoes)";
+                                "VALUES (SQ_ID_FICHA_PRODUTO.NEXTVAL, :IdItem, :IdProduto, :Qtd, :Observacoes)";
 
-                cmd.Parameters.Add(":IdItem", OracleDbType.Int32).Value = this.IdItemEstoque;
-                cmd.Parameters.Add(":IdProduto", OracleDbType.Int32).Value = this.IdProduto;
+                cmd.Parameters.Add(":IdItem", OracleDbType.Int32).Value = this.itemEstoque.Id;
+                cmd.Parameters.Add(":IdProduto", OracleDbType.Int32).Value = this.produto.Id;
                 cmd.Parameters.Add(":Qtd", OracleDbType.Int32).Value = this.Qtd;
                 cmd.Parameters.Add(":Observacoes", OracleDbType.Varchar2, 100).Value = this.Observacao;
+
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (OracleException ex)
+            {
+                strErrMsg = "Atenção, o sistema detectou o seguinte problema: " + "\r\n" +
+                    "Descrição: " + Convert.ToString(ex.Message) + "\r\n" +
+                    "Origem: " + Convert.ToString(ex.Source);
+                MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+                return false;
+            }
+        }
+
+        public bool Alterar(int id)
+        {
+            OracleConnection conn = Conexao.GetInstance();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.CommandText = "UPDATE FICHA_PRODUTO SET " +
+                                "ID_ITEM = :IdItem, " +
+                                "ID_PRODUTO = :IdProduto, " +
+                                "QTD = :Qtd, " +
+                                "OBSERVACOES = :Observacoes " +
+                                "WHERE ID = :Id";
+
+                cmd.Parameters.Add(":IdItem", OracleDbType.Int32).Value = this.itemEstoque.Id;
+                cmd.Parameters.Add(":IdProduto", OracleDbType.Int32).Value = this.produto.Id;
+                cmd.Parameters.Add(":Qtd", OracleDbType.Int32).Value = this.Qtd;
+                cmd.Parameters.Add(":Observacoes", OracleDbType.Varchar2, 100).Value = this.Observacao;
+                cmd.Parameters.Add(":Id", OracleDbType.Int32).Value = id;
 
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conn;

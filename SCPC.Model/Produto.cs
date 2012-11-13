@@ -98,7 +98,7 @@ namespace SPCP.Model
             }
         }
 
-        public ArrayList GetProdutos()
+        public static ArrayList GetProdutos()
         {
             OracleDataReader dr;
             OracleConnection conn = Conexao.GetInstance();
@@ -162,7 +162,7 @@ namespace SPCP.Model
                 }
             }
 
-            conn.Close();
+            //conn.Close();
 
             return p;
         }

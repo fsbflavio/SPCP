@@ -7,8 +7,14 @@ namespace SPCP.Controller
 {
     public class ProdutoDTO
     {
-        public int Id;
-        public int Codigo;
-        public string Nome;
+        public int Id { get; set; }
+        public int Codigo { get; set; }
+        public string Descricao { get; set; }
+
+        public override string ToString()
+        {
+            return this.Descricao;
+        }
     }
+
 }

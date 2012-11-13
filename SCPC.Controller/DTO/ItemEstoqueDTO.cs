@@ -10,10 +10,15 @@ namespace SPCP.Controller
 {
     public class ItemEstoqueDTO
     {
-        public int Id;
-        public String Descricao;
+        public int Id {get; set;}
+        public String Descricao {get; set;}
         public int EstoqueMinimo;
         public UnidadeMedida UnidadeMedida;
         public int IdGrupoItemEstoque;
+
+        public override string ToString()
+        {
+            return Descricao;
+        }
     }
 }

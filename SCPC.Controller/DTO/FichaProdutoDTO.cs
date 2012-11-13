@@ -7,10 +7,19 @@ namespace SPCP.Controller
 {
     public class FichaProdutoDTO
     {
-        public int Id;
-        public int IdItemEstoque;
-        public int IdProduto;
-        public int Qtd;
-        public string Observacao;
+        public int Id {get; set;}
+        public ItemEstoqueDTO Item{ get; set; }
+        public ProdutoDTO Produto { get; set; }
+        public int Qtd { get; set; }
+        public string Observacao { get; set; }
+
+        public FichaProdutoDTO()
+        {
+            Id = 0;
+            Item = new ItemEstoqueDTO();
+            Produto = new ProdutoDTO();
+            Qtd = 0;
+            Observacao = string.Empty;
+        }
     }
 }

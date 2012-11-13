@@ -11,7 +11,7 @@ namespace SPCP.Model
 {
     public class ItemEstoque
     {
-        public int Id {get; set; }
+        public int Id {get; set; } //para o combobox
         public String Descricao {get; set;}
         public int EstoqueMinimo;
         public UnidadeMedida UnidadeMedida;
@@ -167,6 +167,40 @@ namespace SPCP.Model
             }
 
             return array;
+        }
+
+        public static ItemEstoque GetItemEstoque(int id)
+        {
+            ItemEstoque item = new ItemEstoque();
+
+            OracleDataReader dr;
+            OracleConnection conn = Conexao.GetInstance();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.CommandText = "SELECT * FROM ITEM_ESTOQUE WHERE ID_ITEM = :Id ";
+
+                cmd.Parameters.Add(":Id", OracleDbType.Int32).Value = id;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    item.Id = Convert.ToInt32(dr["ID_ITEM"]);
+                    item.Descricao = (string)dr["DESCRICAO"];
+                    item.UnidadeMedida = (UnidadeMedida)Convert.ToInt32(dr["UNIDADE_MEDIDA"]);
+                    item.EstoqueMinimo = (int)dr["ESTOQUE_MINIMO"];
+                    item.GrupoItemEstoque = GrupoItemEstoque.FindById(Convert.ToInt32(dr["ID_GRUPO"]));
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return item;
         }
 
         public override string ToString()

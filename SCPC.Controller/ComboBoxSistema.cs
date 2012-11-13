@@ -35,18 +35,46 @@ namespace SPCP.Controller
 
         public static ArrayList Produtos()
         {
-            Produto p = new Produto();
+            ArrayList array = Produto.GetProdutos();
 
-            ArrayList array = p.GetProdutos();
+            //teste refactor aki
+            ArrayList list = new ArrayList();
+            ProdutoDTO pDTO;
+            foreach (Produto p in array)
+            {
+                pDTO = new ProdutoDTO();
+                pDTO.Id = p.Id;
+                pDTO.Descricao = p.Descricao;
+                pDTO.Codigo = p.Codigo;
+                
+                list.Add(pDTO);
+            }
 
-            return array;
+            return list;
         }
 
         public static ArrayList ItensEstoque()
         {
             ItemEstoque i = new ItemEstoque();
             ArrayList array = i.GetItensEstoque();
-            return array;
+
+
+            //teste refactor aki
+
+            ArrayList list = new ArrayList();
+            ItemEstoqueDTO dto;
+            foreach (ItemEstoque a in array)
+            {
+                dto = new ItemEstoqueDTO();
+                dto.Descricao = a.Descricao;
+                dto.EstoqueMinimo = a.EstoqueMinimo;
+                dto.Id = a.Id;
+                dto.UnidadeMedida = a.UnidadeMedida;
+                dto.IdGrupoItemEstoque = a.GrupoItemEstoque.Id;
+                list.Add(dto);
+            }
+            
+            return list;
         }
 
 
