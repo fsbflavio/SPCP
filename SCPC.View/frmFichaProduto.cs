@@ -13,11 +13,16 @@ namespace SPCP.View
 {
     public partial class frmFichaProduto : SPCP.View.frmCadastroMain
     {
-        ArrayList itens = new ArrayList();
+        ArrayList itensInsertUpdate = new ArrayList();
+        ArrayList itensRemoved = new ArrayList();
+
+        BindingSource bs = new BindingSource(); // necessario para exibir as atualização no grid;
+        BindingSource pesquisa = new BindingSource();
 
         public frmFichaProduto()
         {
             InitializeComponent();
+            bs.DataSource = itensInsertUpdate;
         }
 
         public override void Salvar()
@@ -25,15 +30,17 @@ namespace SPCP.View
             if (ValidaCampos())
             {
                 ProdutoControl produto = new ProdutoControl();
+                FichaProdutoControl ficha = new FichaProdutoControl();
+
+                ProdutoDTO produtoDTO = new ProdutoDTO();
+                produtoDTO.Id = id;
+                produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
+                produtoDTO.Descricao = this.txtNomeProduto.Text;
 
                 if (ModoOperacao == "E")
                 {
-                    ProdutoDTO produtoDTO = new ProdutoDTO();
-                    produtoDTO.Id = id;
-                    produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
-                    produtoDTO.Descricao = this.txtNomeProduto.Text;
-
                     produto.Alterar(produtoDTO);
+                    ficha.SalvaGrid(itensInsertUpdate, itensRemoved);
 
                     ModoOperacao = "";
                     DesativaControles();
@@ -46,27 +53,21 @@ namespace SPCP.View
 
                 if (ModoOperacao == "N")
                 {
-                    ProdutoDTO produtoDTO = new ProdutoDTO();
-                    produtoDTO.Codigo = Convert.ToInt32(this.txtCodigo.Text);
-                    produtoDTO.Descricao = this.txtNomeProduto.Text;
-
                     produto.Incluir(produtoDTO);
+                    ficha.SalvaGrid(itensInsertUpdate, itensRemoved);
 
                     ModoOperacao = "";
                     DesativaControles();
+
 
                     MessageBox.Show("O registro foi salvo com sucesso!",
                                     "Transação Concluída", MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                 }
 
+
                 Pesquisar(dgPesquisa, this.txtPESQUISA.Text);
                 SistemaEmEspera();
-                InicializarComboBoxes(); //recarregar
-
-                //teste
-                FichaProdutoControl ficha = new FichaProdutoControl();
-                ficha.SalvaGrid(itens);
             }
         }
 
@@ -76,19 +77,59 @@ namespace SPCP.View
                 return false;
             if (!ValidaPreenchimento(this.txtNomeProduto))
                 return false;
+
+            decimal result;
+            if (!decimal.TryParse(this.txtCodigo.Text, out result))
+            {
+                MessageBox.Show("Deve ser Informado um valor numérico no campo Código da Ficha", "Tipo de dado informado Invalido!");
+                return false;
+            }
+            if (dgMateriais.Rows.Count <= 0) //grid não pode estar vazio
+            {
+                MessageBox.Show("A lista de composição do Produto esta vazia. Insira os materiais ", "Composição vazia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
+            return true;
+        }
+
+        public bool ValidaCamposCustos()
+        {
+            //valida inserção no grid
+            if (!ValidaPreenchimento(this.cbxGrupo))
+                return false;
+            if (!ValidaPreenchimento(this.cbxItem))
+                return false;
+            if (!ValidaPreenchimento(this.txtQtd))
+                return false;
+            //verifica se é numérico
+            decimal result;
+            if (!decimal.TryParse(this.txtQtd.Text, out result))
+            {
+                MessageBox.Show("Deve ser Informado um valor numérico no campo Qtd");
+                return false;
+            }
+            
             return true;
         }
 
         public override void Pesquisar(DataGridView dg, string nome)
         {
             ProdutoControl pControl = new ProdutoControl();
-            //dg.DataSource = pControl.GetProdutos();
+                
+            pesquisa.DataSource = pControl.GetProdutosByNome(nome);
+            dg.DataSource = pesquisa;
+
+            if (pesquisa.Count <= 0) //trata o caso q a busca é vazia. evita q os cabeçalhos sumam.
+            {
+                return;
+            }
 
             //popula o datagrid retornado
             dg.RowsDefaultCellStyle.BackColor = Color.White;
             dg.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
             dg.EnableHeadersVisualStyles = true;
-            dg.DataSource = pControl.GetProdutos();
 
             //formata as colunas do datagrid
             dg.Columns["Id"].HeaderText = "Reg. nº"; //Nome coluna
@@ -113,21 +154,8 @@ namespace SPCP.View
             dg.Refresh();
         }
 
-        public void CarregaDataGridCustos(DataGridView dg, int id)
+        public void ConfiguraDataGrid(DataGridView dg, BindingSource bs)
         {
-            FichaProdutoControl ficha = new FichaProdutoControl();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ficha.GetFicha(id);
-
-            if (bs.Count <= 0) //trata o caso q a busca é vazia. evita q os cabeçalhos sumam.
-            {
-                bs.Clear();
-                dg.DataSource = bs;
-                return;
-            }
-
-            
-            
             //popula o datagrid retornado
             dg.RowsDefaultCellStyle.BackColor = Color.White;
             dg.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
@@ -148,11 +176,11 @@ namespace SPCP.View
             dg.Columns["Item"].ToolTipText = "Descrição Item";
             dg.Columns["Item"].Visible = true;
 
-            dg.Columns["Produto"].HeaderText = "Produto"; //Nome coluna
-            dg.Columns["Produto"].Width = 845; //largura coluna
-            dg.Columns["Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dg.Columns["Produto"].ToolTipText = "Produto";
-            dg.Columns["Produto"].Visible = false;
+            //dg.Columns["Produto"].HeaderText = "Produto"; //Nome coluna
+            //dg.Columns["Produto"].Width = 845; //largura coluna
+            //dg.Columns["Produto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            //dg.Columns["Produto"].ToolTipText = "Produto";
+            //dg.Columns["Produto"].Visible = false;
 
             dg.Columns["Qtd"].HeaderText = "QTD"; //Nome coluna
             dg.Columns["Qtd"].Width = 80; //largura coluna
@@ -168,6 +196,26 @@ namespace SPCP.View
 
             dg.Refresh();
 
+        }
+
+        public override void LimpaCampos()
+        {
+            base.LimpaCampos();
+            dgMateriais.Rows.Clear();
+        }
+
+        public void CarregaDataGridCustos(DataGridView dg, int id)
+        {
+            FichaProdutoControl ficha = new FichaProdutoControl();
+
+            itensInsertUpdate = ficha.GetFicha(id);
+            bs.DataSource = itensInsertUpdate;
+
+            if (bs.Count > 0) //trata o caso q a busca é vazia. evita q os cabeçalhos sumam.
+            {
+                ConfiguraDataGrid(dgMateriais, bs);
+            }
+
             return;
         }
 
@@ -182,7 +230,6 @@ namespace SPCP.View
                 this.txtCodigo.Text = p.Codigo.ToString();
                 this.txtNomeProduto.Text = p.Descricao.ToString();
 
-                
                 CarregaDataGridCustos(dgMateriais, id); // Carrega os materiais de um produto no grid
             }
             catch (Exception e)
@@ -200,10 +247,7 @@ namespace SPCP.View
                 this.cbxGrupo.DisplayMember = "descricao";
                 this.cbxGrupo.SelectedIndex = -1;
 
-                this.cbxItem.DataSource = ComboBoxSistema.ItensEstoque();
-                this.cbxItem.ValueMember = "Id";
-                this.cbxItem.DisplayMember = "Descricao";
-                this.cbxItem.SelectedIndex = -1;
+                
             }
             catch (Exception e)
             {
@@ -212,32 +256,169 @@ namespace SPCP.View
 
         }
 
+        public override void AtivaControles()
+        {
+            this.grpCadastro.Enabled = true;
+            this.tabPesquisa.Enabled = false;
+            this.tabCustos.Enabled = true;
+        }
+
+        public override void DesativaControles()
+        {
+            this.tabPesquisa.Enabled = true;
+            this.grpCadastro.Enabled = false;
+            this.tabCustos.Enabled = false;
+
+        }
+
+        public override void Excluir(int id)
+        {
+            bool excluido;
+
+            try
+            {
+                //verifica se existe um registro em estado de edição
+                if (ModoOperacao == "E")
+                {
+                    MessageBox.Show("Atenção, uma transação de atualização de registro " +
+                        "não foi finalizada. Se você executou alterações no registro em " +
+                        "edição, salve-as, por favor. Se desejar cancelar as atualizações, " +
+                        "clique no botão correspondente do formulário.",
+                        "Edição de registro em andamento",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (ModoOperacao == "N")
+                {
+                    MessageBox.Show("Atenção, uma transação de criação de registro " +
+                        "não foi finalizada. Se esta inserindo um novo registro " +
+                        "salve-o, por favor. Se desejar cancelar a inserção, " +
+                        "clique no botão correspondente do formulário.",
+                        "Edição de registro em andamento",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (id == 0)
+                {
+                    MessageBox.Show("Atenção, não há um registro selecionado em vídeo " +
+                        "para exclusão. Verifique, por favor!", "Transação Inválida",
+                        MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                //inicia procedimento de exclusão do registro corrente
+                DialogResult i;
+                i = MessageBox.Show("Atenção, o seguinte registro será permanentemente " +
+                    "excluído do sistema:" + "\r\n" + "\r\n" +
+                    "Registro nº : " + id.ToString() + "\r\n" +
+                    "Descrição : " + this.txtNomeProduto.Text.ToUpper() + "\r\n" +
+                        "\r\n" +
+                    "Confirma a exclusão do registro corrente?", "Exclusão de Registros",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                switch (i)
+                {
+                    case (DialogResult.No):
+                        MessageBox.Show("A exclusão do registro corrente foi cancelada " +
+                            "pelo usuário!", "Exclusão Cancelada", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        return;
+                }
+
+                FichaProdutoControl f = new FichaProdutoControl();
+                foreach (FichaProdutoDTO dto in bs)
+                {
+                    f.Excluir(dto);
+                }
+
+                ProdutoControl p = new ProdutoControl();
+                excluido = p.Excluir(id);
+
+                if (excluido)
+                {
+                    LimpaCampos();
+                    SistemaEmEspera();
+                    pesquisa.RemoveCurrent();
+                    bs.Clear();
+                    //Pesquisar(dgPesquisa, txtPESQUISA.Text);
+
+                    MessageBox.Show("O registro foi excluído com sucesso!", "Exclusão " +
+                        "de registros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Atenção, o registro não pôde ser excluído!. " +
+                        "Repita a operação. Se o problema persistir, entre em contato " +
+                        "com o suporte.", "Problema na exclusão do registro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                strErrMsg = "Atenção, o sistema detectou o seguinte problema: " + "\r\n" +
+                    "Descrição: " + Convert.ToString(ex.Message) + "\r\n" +
+                    "Origem: " + Convert.ToString(ex.Source);
+                MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void bttnAddDgCursos_Click(object sender, EventArgs e)
         {
-            //DataRow row = dt.NewRow(); // Cria a nova Linha com as colunas da tabela[0]
-            //row["ID_ITEM"] = cbxItem.SelectedValue;
-            //row["ID_PRODUTO"] = cbxProduto.SelectedValue;
-            //row["DESCRICAO"] = cbxItem.SelectedItem;
-            //row["QTD"] = txtQtd.Text;
-            //row["OBSERVACOES"] = txtObservacoes.Text;
+            try
+            {
+                if (ValidaCamposCustos())
+                {
+                    FichaProdutoDTO p = new FichaProdutoDTO();
+                    p.Item = (ItemEstoqueDTO)cbxItem.SelectedItem;
+                    p.Produto.Id = this.id;
+                    p.Qtd = Convert.ToInt32(txtQtd.Text);
+                    p.Observacao = txtObservacoes.Text;
 
-            //dt.Rows.Add(row);
+                    bs.Add(p);
+                    //itensInsertUpdate.Add(p);
+                    ConfiguraDataGrid(dgMateriais, bs);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Falha ao inserir composição no grid. Verifique se as informações inseridas são validas e tente novamente", "Falha ao adicionar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-            FichaProdutoDTO p = new FichaProdutoDTO();
-            p.Item = (ItemEstoqueDTO)cbxItem.SelectedItem;
-            p.Produto.Id = this.id;
-            p.Qtd = Convert.ToInt32(txtQtd.Text);
-            p.Observacao = txtObservacoes.Text;
+        private void bttnExcluirDgCursos_Click(object sender, EventArgs e)
+        {
+            if (bs.Current != null)// trata o caso q o grid esta vazio
+            {
+                itensRemoved.Add(bs.Current);
 
+                bs.Remove(bs.Current);
+                dgMateriais.DataSource = bs;
+            }
+        }
 
-            itens.Add(p);
+        private void cbxGrupo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            BindingSource filtro = new BindingSource();
+            ArrayList a = ComboBoxSistema.ItensEstoque();
 
-            
-            BindingSource bs = new BindingSource();
-            
-            bs.DataSource = itens;
-            dgMateriais.DataSource = bs;
-            
+            foreach (ItemEstoqueDTO i in a)
+            {
+                if (i.IdGrupoItemEstoque == (cbxGrupo.SelectedItem as ComboBoxItem).id)
+                    filtro.Add(i);
+            }
+
+            if (filtro.Count > 0)
+            {
+                this.cbxItem.DataSource = filtro;
+                this.cbxItem.ValueMember = "Id";
+                this.cbxItem.DisplayMember = "Descricao";
+                this.cbxItem.SelectedIndex = -1;
+            }
         }
     }
 }

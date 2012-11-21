@@ -5,6 +5,7 @@ using System.Text;
 using Oracle.DataAccess.Client;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace SPCP.Model
 {
@@ -190,6 +191,74 @@ namespace SPCP.Model
             return dt;
         }
 
+        public static ArrayList GetFornecedores()
+        {
+            OracleDataReader dr;
+            OracleConnection conn = Conexao.GetInstance();
 
+            ArrayList array = new ArrayList();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "SELECT ID_FORNECEDOR, NOME_FORNECEDOR FROM TBL_FORNECEDOR ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+
+            dr = cmd.ExecuteReader();
+
+            Fornecedor p;
+            while (dr.Read())
+            {
+                try
+                {
+                    p = new Fornecedor();
+                    p.Id = Convert.ToInt32(dr["ID_FORNECEDOR"]);
+                    p.Nome = dr.GetString(1);
+                    array.Add(p);
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
+            conn.Close();
+
+            return array;
+        }
+
+        public static Fornecedor GetFornecedor(int id)
+        {
+            OracleDataReader dr;
+            OracleConnection conn = Conexao.GetInstance();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "SELECT ID_FORNECEDOR, NOME_FORNECEDOR FROM TBL_FORNECEDOR " +
+                                "WHERE ID_FORNECEDOR = :Id";
+
+            cmd.Parameters.Add(":Id", OracleDbType.Int32).Value = id;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+
+            dr = cmd.ExecuteReader();
+
+            Fornecedor fornecedor = new Fornecedor();
+            if (dr.Read())
+            {
+                try
+                {
+                    fornecedor = new Fornecedor();
+                    fornecedor.Id = Convert.ToInt32(dr["ID_FORNECEDOR"]);
+                    fornecedor.Nome = dr.GetString(1);
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
+            //conn.Close();
+
+            return fornecedor;
+        }
     }
 }

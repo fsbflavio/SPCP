@@ -8,8 +8,8 @@ namespace SPCP.Model
 {
     public class Pessoa
     {
-        public int Id;
-        public string Nome;
+        public int Id { set; get; }
+        public string Nome { get; set; }
         public string Cnpj;
         public string Rua;
         public string NumRua;

@@ -31,12 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Oracle\product\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,12 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ALLTABLE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ALLTABLE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ComprasControl.cs" />
     <Compile Include="ClienteControl.cs" />
     <Compile Include="ComboBoxItem.cs" />
     <Compile Include="ComboBoxSistema.cs" />
+    <Compile Include="DTO\ComprasDTO.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
     <Compile Include="DTO\FichaProdutoDTO.cs" />
     <Compile Include="DTO\FornecedorDTO.cs" />
+    <Compile Include="DTO\ItemCompraDTO.cs" />
     <Compile Include="DTO\ItemEstoqueDTO.cs" />
     <Compile Include="DTO\ProdutoDTO.cs" />
     <Compile Include="FichaProdutoControl.cs" />
@@ -59,6 +73,13 @@
     <Compile Include="Pesquisa.cs" />
     <Compile Include="ProdutoControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioControl.cs" />
+    <Compile Include="teste.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SCPC.Model\SPCP.Model.csproj">
@@ -69,6 +90,24 @@
       <Project>{59FE5BCA-AB6E-4197-BCE4-59BC93B99CA3}</Project>
       <Name>SPCP.Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ALLTABLE.xsc">
+      <DependentUpon>ALLTABLE.xsd</DependentUpon>
+    </None>
+    <None Include="ALLTABLE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ALLTABLE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ALLTABLE.xss">
+      <DependentUpon>ALLTABLE.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

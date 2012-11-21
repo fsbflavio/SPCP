@@ -118,6 +118,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(99, 22);
             this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.Tag = "Codigo Ficha";
             // 
             // groupBox1
             // 
@@ -141,11 +142,14 @@
             // 
             // txtNomeProduto
             // 
+            this.txtNomeProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNomeProduto.Location = new System.Drawing.Point(3, 18);
+            this.txtNomeProduto.MaxLength = 100;
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(483, 22);
             this.txtNomeProduto.TabIndex = 0;
+            this.txtNomeProduto.Tag = "Nome do Produto";
             // 
             // tabCustos
             // 
@@ -177,11 +181,14 @@
             // 
             // txtObservacoes
             // 
+            this.txtObservacoes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtObservacoes.Location = new System.Drawing.Point(3, 18);
+            this.txtObservacoes.MaxLength = 100;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(284, 22);
             this.txtObservacoes.TabIndex = 0;
+            this.txtObservacoes.Tag = "Observações";
             // 
             // groupBox5
             // 
@@ -200,6 +207,7 @@
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(61, 22);
             this.txtQtd.TabIndex = 0;
+            this.txtQtd.Tag = "Qtd";
             // 
             // bttnExcluirDgCursos
             // 
@@ -214,6 +222,7 @@
             this.bttnExcluirDgCursos.TabIndex = 62;
             this.bttnExcluirDgCursos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bttnExcluirDgCursos.UseVisualStyleBackColor = true;
+            this.bttnExcluirDgCursos.Click += new System.EventHandler(this.bttnExcluirDgCursos_Click);
             // 
             // bttnAddDgCursos
             // 
@@ -248,6 +257,7 @@
             this.cbxItem.Name = "cbxItem";
             this.cbxItem.Size = new System.Drawing.Size(262, 24);
             this.cbxItem.TabIndex = 60;
+            this.cbxItem.Tag = "Item";
             // 
             // groupBox2
             // 
@@ -267,6 +277,8 @@
             this.cbxGrupo.Name = "cbxGrupo";
             this.cbxGrupo.Size = new System.Drawing.Size(259, 24);
             this.cbxGrupo.TabIndex = 60;
+            this.cbxGrupo.Tag = "Grupo";
+            this.cbxGrupo.SelectionChangeCommitted += new System.EventHandler(this.cbxGrupo_SelectionChangeCommitted);
             // 
             // label2
             // 

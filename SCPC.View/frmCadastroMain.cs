@@ -37,14 +37,16 @@ namespace SPCP.View
             string[] status = new string[2] { "ATIVO", "INATIVO" };
         }
 
-        public void DesativaControles()
+        public virtual void DesativaControles()
         {
+            this.tabPesquisa.Enabled = true;
             this.grpCadastro.Enabled = false;
         }
 
-        public void AtivaControles()
+        public virtual void AtivaControles()
         {
             this.grpCadastro.Enabled = true;
+            this.tabPesquisa.Enabled = false;
         }
 
         public void ExibeTabPage(int i)
@@ -63,12 +65,35 @@ namespace SPCP.View
 
         public void btnNovo_Click(object sender, EventArgs e)
         {
+            if (ModoOperacao == "E")
+            {
+                MessageBox.Show("Atenção, uma transação de atualização de registro " +
+                    "não foi finalizada. Se você executou alterações no registro em " +
+                    "edição, salve-as, por favor. Se desejar cancelar as atualizações, " +
+                    "clique no botão correspondente do formulário.",
+                    "Edição de registro em andamento",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ModoOperacao == "N")
+            {
+                MessageBox.Show("Atenção, uma transação de criação de registro " +
+                    "não foi finalizada. Se esta inserindo um novo registro " +
+                    "salve-o, por favor. Se desejar cancelar a inserção, " +
+                    "clique no botão correspondente do formulário.",
+                    "Edição de registro em andamento",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             LimpaCampos();
             ExibeTabPage(1);
             AtivaControles();
             ModoOperacao = "N";
 
             SistemaEmEdicao();
+
         }
 
         public void btnSalvar_Click(object sender, EventArgs e)
@@ -97,19 +122,51 @@ namespace SPCP.View
         {
             DesativaControles();
             SistemaEmEspera();
+            ModoOperacao = "";
+
         }
 
         public void btnEditar_Click(object sender, EventArgs e)
         {
-            ExibeTabPage(1);
-            AtivaControles();
-            ModoOperacao = "E";
-            SistemaEmEdicao();
+            if (ModoOperacao == "E")
+            {
+                MessageBox.Show("Atenção, uma transação de atualização de registro " +
+                    "não foi finalizada. Se você executou alterações no registro em " +
+                    "edição, salve-as, por favor. Se desejar cancelar as atualizações, " +
+                    "clique no botão correspondente do formulário.",
+                    "Edição de registro em andamento",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ModoOperacao == "N")
+            {
+                MessageBox.Show("Atenção, uma transação de criação de registro " +
+                    "não foi finalizada. Se esta inserindo um novo registro " +
+                    "salve-o, por favor. Se desejar cancelar a inserção, " +
+                    "clique no botão correspondente do formulário.",
+                    "Edição de registro em andamento",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (id != 0)
+            {
+                ExibeTabPage(1);
+                AtivaControles();
+                ModoOperacao = "E";
+                SistemaEmEdicao();
+            }
+            else
+            {
+                MessageBox.Show("Voce deve primeiro selecionar um registro para editar", "Registro não selecionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
-        public void LimpaCampos()
+        public virtual void LimpaCampos()
         {
+            id = 0;
             ClearControlsTxt(this.grpCadastro);
         }
 
@@ -118,10 +175,22 @@ namespace SPCP.View
             Pesquisar(dgPesquisa, txtPESQUISA.Text);
         }
 
-        public void dgPesquisa_Click(object sender, EventArgs e)
+        public void dgPesquisa_Click(object sender, EventArgs e) //remover?
         {
-            id = Convert.ToInt32(dgPesquisa.CurrentRow.Cells[0].Value);
-            CarregaDadosControles(id);
+            if (dgPesquisa.CurrentRow != null)
+            {
+                id = Convert.ToInt32(dgPesquisa.CurrentRow.Cells[0].Value);
+                CarregaDadosControles(id);
+            }
+        }
+
+        private void dgPesquisa_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgPesquisa.CurrentRow != null)
+            {
+                id = Convert.ToInt32(dgPesquisa.CurrentRow.Cells[0].Value);
+                CarregaDadosControles(id);
+            }
         }
 
         public void btnExcluir_Click(object sender, EventArgs e)
@@ -151,7 +220,6 @@ namespace SPCP.View
                     TextBox ctrTxt = Ctrl as TextBox;
                     ctrTxt.Text = "";
                 }
-
                 //chamada recursiva
                 foreach (System.Windows.Forms.Control ctrChild in Ctrl.Controls)
                     ClearControlsTxt(ctrChild);
@@ -304,7 +372,7 @@ namespace SPCP.View
                 return false;
             }
         }
-        
+
         public virtual void Salvar()
         {
             //esse metodo deve ser sobrescrito na classe filha
@@ -335,5 +403,7 @@ namespace SPCP.View
         {
             //esse metodo deve ser sobrescrito na classe filha
         }
+
+
     }
 }

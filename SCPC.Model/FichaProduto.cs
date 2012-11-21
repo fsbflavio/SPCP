@@ -11,7 +11,7 @@ namespace SPCP.Model
 {
     public class FichaProduto
     {
-        private string strErrMsg;
+        private static string strErrMsg;
 
         public int Id;
         public ItemEstoque itemEstoque;
@@ -31,7 +31,7 @@ namespace SPCP.Model
         public static ArrayList GetFichaProduto(int id) //isso deverria ser um objeto so ao invez de um array?
         {
             FichaProduto ficha;
-            ArrayList array = new ArrayList();
+            ArrayList dt = new ArrayList();
             OracleDataReader dr;
             OracleConnection conn = Conexao.GetInstance();
 
@@ -55,21 +55,29 @@ namespace SPCP.Model
                     ficha.itemEstoque = ItemEstoque.GetItemEstoque(Convert.ToInt32(dr["ID_ITEM"]));
                     ficha.produto = Produto.GetProduto(Convert.ToInt32(dr["ID_PRODUTO"]));
                     ficha.Qtd = Convert.ToInt32(dr[3]);
-                    ficha.Observacao = dr.GetString(4);
 
-                    array.Add(ficha);
+                    if (dr[4] != DBNull.Value)
+                    {
+                        ficha.Observacao = dr.GetString(4);
+                    }
+
+                    dt.Add(ficha);
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                strErrMsg = "Atenção, o sistema detectou o seguinte problema: " + "\r\n" +
+                    "Descrição: " + Convert.ToString(ex.Message) + "\r\n" +
+                    "Origem: " + Convert.ToString(ex.Source);
+                MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 conn.Close();
             }
 
-            return array;
+            return dt;
         }
 
         public bool Incluir()
@@ -94,7 +102,6 @@ namespace SPCP.Model
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
-                conn.Close();
                 return true;
             }
             catch (OracleException ex)
@@ -104,17 +111,59 @@ namespace SPCP.Model
                     "Origem: " + Convert.ToString(ex.Source);
                 MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                conn.Close();
                 return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public bool Incluir2()
+        {
+            OracleConnection conn = Conexao.GetInstance();
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.CommandText = "INSERT INTO FICHA_PRODUTO (" +
+                                "ID, " +
+                                "ID_ITEM, " +
+                                "ID_PRODUTO, " +
+                                "QTD, " +
+                                "OBSERVACOES) " +
+                                "VALUES (SQ_ID_FICHA_PRODUTO.NEXTVAL, :IdItem, SQ_ID_PRODUTO.CURRVAL, :Qtd, :Observacoes)";
+
+                cmd.Parameters.Add(":IdItem", OracleDbType.Int32).Value = this.itemEstoque.Id;
+                cmd.Parameters.Add(":Qtd", OracleDbType.Int32).Value = this.Qtd;
+                cmd.Parameters.Add(":Observacoes", OracleDbType.Varchar2, 100).Value = this.Observacao;
+
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OracleException ex)
+            {
+                strErrMsg = "Atenção, o sistema detectou o seguinte problema: " + "\r\n" +
+                    "Descrição: " + Convert.ToString(ex.Message) + "\r\n" +
+                    "Origem: " + Convert.ToString(ex.Source);
+                MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
         public bool Alterar(int id)
         {
             OracleConnection conn = Conexao.GetInstance();
+            OracleCommand cmd = new OracleCommand();
+
             try
             {
-                OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = "UPDATE FICHA_PRODUTO SET " +
                                 "ID_ITEM = :IdItem, " +
                                 "ID_PRODUTO = :IdProduto, " +
@@ -131,7 +180,6 @@ namespace SPCP.Model
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
-                conn.Close();
                 return true;
             }
             catch (OracleException ex)
@@ -141,8 +189,41 @@ namespace SPCP.Model
                     "Origem: " + Convert.ToString(ex.Source);
                 MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                conn.Close();
                 return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
+        public bool Excluir(int Id)
+        {
+            OracleConnection conn = Conexao.GetInstance();
+            OracleCommand cmd = new OracleCommand();
+            try
+            {
+                cmd.CommandText = "DELETE FROM FICHA_PRODUTO WHERE ID = :Id";
+
+                cmd.Parameters.Add(":Id", OracleDbType.Int32).Value = Id;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strErrMsg = "Atenção, o sistema detectou o seguinte problema: " + "\r\n" +
+                    "Descrição: " + Convert.ToString(ex.Message) + "\r\n" +
+                    "Origem: " + Convert.ToString(ex.Source);
+                MessageBox.Show(strErrMsg, "Procedimento: " + Convert.ToString(ex.TargetSite),
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

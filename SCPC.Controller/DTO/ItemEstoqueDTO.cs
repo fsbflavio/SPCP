@@ -14,7 +14,7 @@ namespace SPCP.Controller
         public String Descricao {get; set;}
         public int EstoqueMinimo;
         public UnidadeMedida UnidadeMedida;
-        public int IdGrupoItemEstoque;
+        public int IdGrupoItemEstoque {get; set;}
 
         public override string ToString()
         {

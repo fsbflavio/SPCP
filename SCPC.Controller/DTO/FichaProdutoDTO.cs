@@ -9,7 +9,7 @@ namespace SPCP.Controller
     {
         public int Id {get; set;}
         public ItemEstoqueDTO Item{ get; set; }
-        public ProdutoDTO Produto { get; set; }
+        public ProdutoDTO Produto;
         public int Qtd { get; set; }
         public string Observacao { get; set; }
 

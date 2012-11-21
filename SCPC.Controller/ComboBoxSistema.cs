@@ -16,7 +16,7 @@ namespace SPCP.Controller
             ArrayList grupos = new ArrayList {
                 new ComboBoxItem(1, "Materiais Diretos"),
                 new ComboBoxItem(2, "Materiais Indiretos"),
-                new ComboBoxItem(2, "Materiais Secundários")
+                new ComboBoxItem(3, "Materiais Secundários")
             };
             
             return grupos;
@@ -77,6 +77,20 @@ namespace SPCP.Controller
             return list;
         }
 
+        public static ArrayList GetFornecedores()
+        {
+            return Fornecedor.GetFornecedores();
+        }
+
+        public static ArrayList GetServicos()
+        {
+            return Servico.GetServicos();
+        }
+
+        public static ArrayList GetStatus()
+        {
+            return Status.GetServicos();
+        }
 
     }
 }

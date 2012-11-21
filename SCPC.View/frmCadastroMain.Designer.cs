@@ -95,6 +95,7 @@
             this.dgPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPesquisa.Size = new System.Drawing.Size(1027, 225);
             this.dgPesquisa.TabIndex = 4;
+            this.dgPesquisa.SelectionChanged += new System.EventHandler(this.dgPesquisa_SelectionChanged);
             this.dgPesquisa.Click += new System.EventHandler(this.dgPesquisa_Click);
             this.dgPesquisa.DoubleClick += new System.EventHandler(this.dtPesquisa_DoubleClick);
             // 
@@ -148,6 +149,7 @@
             // 
             // txtPESQUISA
             // 
+            this.txtPESQUISA.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPESQUISA.Location = new System.Drawing.Point(147, 54);
             this.txtPESQUISA.Margin = new System.Windows.Forms.Padding(4);
             this.txtPESQUISA.Name = "txtPESQUISA";

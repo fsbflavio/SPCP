@@ -56,21 +56,21 @@ namespace SPCP.View
 
         private void custosDeProduçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ExisteJanelaAberta("frmCustosProducao"))
+            if (ExisteJanelaAberta("frmControleProducao"))
                 return;
-            frmCustosProducao frmCustosProducao = new frmCustosProducao();
-            frmCustosProducao.MdiParent = this;
-            frmCustosProducao.Show();
+            frmControleProducao frmControleProducao = new frmControleProducao();
+            frmControleProducao.MdiParent = this;
+            frmControleProducao.Show();
 
         }
 
         private void pedidoDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ExisteJanelaAberta("frmPedidoCompra"))
+            if (ExisteJanelaAberta("frmCompra"))
                 return;
-            frmPedidoCompra frmPedidoCompra = new frmPedidoCompra();
-            frmPedidoCompra.MdiParent = this;
-            frmPedidoCompra.Show();
+            frmCompra frmCompra = new frmCompra();
+            frmCompra.MdiParent = this;
+            frmCompra.Show();
         }
 
         private void pedidoDeVendaToolStripMenuItem_Click(object sender, EventArgs e)

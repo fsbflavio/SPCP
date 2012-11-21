@@ -11,6 +11,11 @@ namespace SPCP.Controller
         public int Codigo { get; set; }
         public string Descricao { get; set; }
 
+        public ProdutoDTO()
+        {
+            this.Descricao = string.Empty;
+        }
+
         public override string ToString()
         {
             return this.Descricao;

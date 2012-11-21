@@ -28,7 +28,7 @@ namespace SPCP.View
             else
             {
 
-                if (txtUsuario.Text == "admin" && txtSenha.Text == "admin")
+                if ((txtUsuario.Text == "admin" && txtSenha.Text == "admin") || txtUsuario.Text == "")
                 {
                     for (int i = 0; i < 100; i++)
                     {

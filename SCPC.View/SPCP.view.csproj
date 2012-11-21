@@ -11,7 +11,8 @@
     <RootNamespace>SPCP.View</RootNamespace>
     <AssemblyName>SCPC.View</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -49,8 +50,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,11 +68,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompra.Designer.cs">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCadastroMain.Designer.cs">
       <DependentUpon>frmCadastroMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmControleProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControleProducao.Designer.cs">
+      <DependentUpon>frmControleProducao.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFichaProduto.cs">
       <SubType>Form</SubType>
@@ -121,12 +140,6 @@
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustosProducao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCustosProducao.Designer.cs">
-      <DependentUpon>frmCustosProducao.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMainMDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +170,12 @@
     <Compile Include="frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisualRelatórios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualRelatórios.designer.cs">
+      <DependentUpon>frmVisualRelatórios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastroMain.resx">
@@ -165,8 +184,11 @@
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustosProducao.resx">
-      <DependentUpon>frmCustosProducao.cs</DependentUpon>
+    <EmbeddedResource Include="frmCompra.resx">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControleProducao.resx">
+      <DependentUpon>frmControleProducao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFichaProduto.resx">
       <DependentUpon>frmFichaProduto.cs</DependentUpon>
@@ -207,6 +229,9 @@
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualRelatórios.resx">
+      <DependentUpon>frmVisualRelatórios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -217,6 +242,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ALLTABLE" targetNamespace="http://tempuri.org/ALLTABLE.xsd" xmlns:mstns="http://tempuri.org/ALLTABLE.xsd" xmlns="http://tempuri.org/ALLTABLE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.SPCP.Model.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FICHA_PRODUTOTableAdapter" GeneratorDataComponentClassName="FICHA_PRODUTOTableAdapter" Name="FICHA_PRODUTO" UserDataComponentName="FICHA_PRODUTOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="SPCP.FICHA_PRODUTO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM FICHA_PRODUTO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_ITEM" DataSetColumn="ID_ITEM" />
+              <Mapping SourceColumn="ID_PRODUTO" DataSetColumn="ID_PRODUTO" />
+              <Mapping SourceColumn="QTD" DataSetColumn="QTD" />
+              <Mapping SourceColumn="OBSERVACOES" DataSetColumn="OBSERVACOES" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ALLTABLE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ALLTABLE" msprop:Generator_UserDSName="ALLTABLE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FICHA_PRODUTO" msprop:Generator_TableClassName="FICHA_PRODUTODataTable" msprop:Generator_TableVarName="tableFICHA_PRODUTO" msprop:Generator_TablePropName="FICHA_PRODUTO" msprop:Generator_RowDeletingName="FICHA_PRODUTORowDeleting" msprop:Generator_UserTableName="FICHA_PRODUTO" msprop:Generator_RowChangingName="FICHA_PRODUTORowChanging" msprop:Generator_RowEvHandlerName="FICHA_PRODUTORowChangeEventHandler" msprop:Generator_RowDeletedName="FICHA_PRODUTORowDeleted" msprop:Generator_RowEvArgName="FICHA_PRODUTORowChangeEvent" msprop:Generator_RowChangedName="FICHA_PRODUTORowChanged" msprop:Generator_RowClassName="FICHA_PRODUTORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_ITEM" msprop:Generator_ColumnVarNameInTable="columnID_ITEM" msprop:Generator_ColumnPropNameInRow="ID_ITEM" msprop:Generator_ColumnPropNameInTable="ID_ITEMColumn" msprop:Generator_UserColumnName="ID_ITEM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnID_PRODUTO" msprop:Generator_ColumnPropNameInRow="ID_PRODUTO" msprop:Generator_ColumnPropNameInTable="ID_PRODUTOColumn" msprop:Generator_UserColumnName="ID_PRODUTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTD" msprop:Generator_ColumnVarNameInTable="columnQTD" msprop:Generator_ColumnPropNameInRow="QTD" msprop:Generator_ColumnPropNameInTable="QTDColumn" msprop:Generator_UserColumnName="QTD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OBSERVACOES" msprop:Generator_ColumnVarNameInTable="columnOBSERVACOES" msprop:Generator_ColumnPropNameInRow="OBSERVACOES" msprop:Generator_ColumnPropNameInTable="OBSERVACOESColumn" msprop:Generator_UserColumnName="OBSERVACOES" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FICHA_PRODUTO" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

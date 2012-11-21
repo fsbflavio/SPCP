@@ -134,11 +134,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbxSITUACAO);
-            this.groupBox2.Location = new System.Drawing.Point(853, 48);
+            this.groupBox2.Location = new System.Drawing.Point(914, 48);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(168, 55);
+            this.groupBox2.Size = new System.Drawing.Size(107, 55);
             this.groupBox2.TabIndex = 73;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Situação";
@@ -150,7 +150,7 @@
             this.cbxSITUACAO.Location = new System.Drawing.Point(4, 19);
             this.cbxSITUACAO.Margin = new System.Windows.Forms.Padding(4);
             this.cbxSITUACAO.Name = "cbxSITUACAO";
-            this.cbxSITUACAO.Size = new System.Drawing.Size(160, 24);
+            this.cbxSITUACAO.Size = new System.Drawing.Size(99, 24);
             this.cbxSITUACAO.TabIndex = 58;
             this.cbxSITUACAO.Tag = "Situação";
             // 
@@ -489,7 +489,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txtCNPJ);
-            this.groupBox4.Location = new System.Drawing.Point(683, 47);
+            this.groupBox4.Location = new System.Drawing.Point(742, 47);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);

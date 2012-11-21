@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Data;
 using SPCP.Model;
 
 namespace SPCP.Controller
@@ -13,12 +14,12 @@ namespace SPCP.Controller
 
         public ArrayList GetFicha(int id)
         {
-            ArrayList array = new ArrayList();
+            ArrayList dt = new ArrayList();
             ArrayList list = new ArrayList();
             FichaProdutoDTO fDTO;
-            array = FichaProduto.GetFichaProduto(id);
+            dt = FichaProduto.GetFichaProduto(id);
 
-            foreach (FichaProduto ficha in array)
+            foreach (FichaProduto ficha in dt)
             {
                 try
                 {
@@ -45,7 +46,7 @@ namespace SPCP.Controller
             return list;
         }
 
-        public void SalvaGrid(ArrayList array)
+        public void SalvaGrid(ArrayList array, ArrayList excluidos)
         {
             foreach (FichaProdutoDTO fDto in array)
             {
@@ -53,6 +54,11 @@ namespace SPCP.Controller
                     Incluir(fDto);
                 else
                     Alterar(fDto);
+            }
+
+            foreach (FichaProdutoDTO fDto in excluidos)
+            {
+                Excluir(fDto);
             }
         }
 
@@ -63,7 +69,10 @@ namespace SPCP.Controller
             ficha.Observacao = f.Observacao;
             ficha.Qtd = f.Qtd;
 
-            ficha.Incluir();
+            if (f.Produto.Id != 0)
+                ficha.Incluir();
+            else
+                ficha.Incluir2();
         }
 
         public void Alterar(FichaProdutoDTO f)
@@ -74,6 +83,11 @@ namespace SPCP.Controller
             ficha.Qtd = f.Qtd;
 
             ficha.Alterar(f.Id);
+        }
+
+        public void Excluir(FichaProdutoDTO f)
+        {
+            ficha.Excluir(f.Id);
         }
     }
 }
