@@ -367,7 +367,8 @@ namespace SPCP.View
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void bttnAddDgCursos_Click(object sender, EventArgs e)
+
+        private void InsereGrid()
         {
             try
             {
@@ -388,6 +389,11 @@ namespace SPCP.View
             {
                 MessageBox.Show("Falha ao inserir composição no grid. Verifique se as informações inseridas são validas e tente novamente", "Falha ao adicionar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void bttnAddDgCursos_Click(object sender, EventArgs e)
+        {
+            InsereGrid();
         }
 
         private void bttnExcluirDgCursos_Click(object sender, EventArgs e)

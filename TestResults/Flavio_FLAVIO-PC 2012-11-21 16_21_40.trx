@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3b96004a-9f8a-4fa5-8f50-bb19d753ba4a" name="Flavio@FLAVIO-PC 2012-11-21 16:21:40" runUser="Flavio-PC\Flavio" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec5daebd-8e1f-4a1c-9c2b-47c53722126c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Flavio_FLAVIO-PC 2012-11-21 16_21_40">
+      <DeploymentItem filename="C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\bin\Debug\SCPC.Util.dll" />
+      <DeploymentItem filename="C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Model\bin\x86\Debug\SCPC.Model.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-11-21T16:21:40.8221147-02:00" queuing="2012-11-21T16:21:42.3532023-02:00" start="2012-11-21T16:21:42.5452133-02:00" finish="2012-11-21T16:22:59.2295994-02:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="FLAVIO-PC" outcome="Error" timestamp="2012-11-21T16:22:59.2275992-02:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetFichaProdutoTest" storage="c:\users\flavio\documents\github\spcp\teste\bin\x86\debug\teste.dll" id="25825485-7dde-2b38-07db-28d8983acbbb">
+      <Execution id="01a897d0-5cfd-40c4-90d4-6bff410cacc0" />
+      <TestMethod codeBase="C:/Users/Flavio/Documents/GitHub/SPCP/teste/bin/x86/Debug/teste.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="teste.FichaProdutoTest, teste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFichaProdutoTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="25825485-7dde-2b38-07db-28d8983acbbb" executionId="01a897d0-5cfd-40c4-90d4-6bff410cacc0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="01a897d0-5cfd-40c4-90d4-6bff410cacc0" testId="25825485-7dde-2b38-07db-28d8983acbbb" testName="GetFichaProdutoTest" computerName="FLAVIO-PC" duration="00:01:16.5293773" startTime="2012-11-21T16:21:42.7002221-02:00" endTime="2012-11-21T16:22:59.2295994-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01a897d0-5cfd-40c4-90d4-6bff410cacc0">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="223bd217-ba6d-4b54-a549-612fb439ec7d" name="Flavio@FLAVIO-PC 2012-11-21 16:20:38" runUser="Flavio-PC\Flavio" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec5daebd-8e1f-4a1c-9c2b-47c53722126c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Flavio_FLAVIO-PC 2012-11-21 16_20_38">
+      <DeploymentItem filename="C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Util\bin\Debug\SCPC.Util.dll" />
+      <DeploymentItem filename="C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Model\bin\x86\Debug\SCPC.Model.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-11-21T16:20:38.9745772-02:00" queuing="2012-11-21T16:20:39.6376151-02:00" start="2012-11-21T16:20:39.7046190-02:00" finish="2012-11-21T16:20:45.1249290-02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" error="0" failed="1" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AlterarTest" storage="c:\users\flavio\documents\github\spcp\teste\bin\x86\debug\teste.dll" id="bc2f69d3-da8a-6476-634d-fdeb5e15aacf">
+      <Execution id="2e67c937-6883-4a12-a88b-3860011b2b29" />
+      <TestMethod codeBase="C:/Users/Flavio/Documents/GitHub/SPCP/teste/bin/x86/Debug/teste.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="teste.FichaProdutoTest, teste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AlterarTest" />
+    </UnitTest>
+    <UnitTest name="GetFichaProdutoTest" storage="c:\users\flavio\documents\github\spcp\teste\bin\x86\debug\teste.dll" id="25825485-7dde-2b38-07db-28d8983acbbb">
+      <Execution id="25d97f5f-f063-464e-b1c3-a431eabdd91e" />
+      <TestMethod codeBase="C:/Users/Flavio/Documents/GitHub/SPCP/teste/bin/x86/Debug/teste.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="teste.FichaProdutoTest, teste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFichaProdutoTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="25825485-7dde-2b38-07db-28d8983acbbb" executionId="25d97f5f-f063-464e-b1c3-a431eabdd91e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc2f69d3-da8a-6476-634d-fdeb5e15aacf" executionId="2e67c937-6883-4a12-a88b-3860011b2b29" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="25d97f5f-f063-464e-b1c3-a431eabdd91e" testId="25825485-7dde-2b38-07db-28d8983acbbb" testName="GetFichaProdutoTest" computerName="FLAVIO-PC" duration="00:00:00.3839589" startTime="2012-11-21T16:20:39.7116194-02:00" endTime="2012-11-21T16:20:40.4636624-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25d97f5f-f063-464e-b1c3-a431eabdd91e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;(null)&gt;. Actual:&lt;System.Collections.ArrayList&gt;. </Message>
+          <StackTrace>   at teste.FichaProdutoTest.GetFichaProdutoTest() in C:\Users\Flavio\Documents\GitHub\SPCP\teste\FichaProdutoTest.cs:line 93
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2e67c937-6883-4a12-a88b-3860011b2b29" testId="bc2f69d3-da8a-6476-634d-fdeb5e15aacf" testName="AlterarTest" computerName="FLAVIO-PC" duration="00:00:04.6047694" startTime="2012-11-21T16:20:40.4646625-02:00" endTime="2012-11-21T16:20:45.0759262-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e67c937-6883-4a12-a88b-3860011b2b29">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at teste.FichaProdutoTest.AlterarTest() in C:\Users\Flavio\Documents\GitHub\SPCP\teste\FichaProdutoTest.cs:line 80
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

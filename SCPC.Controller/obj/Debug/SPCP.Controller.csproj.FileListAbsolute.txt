@@ -1,0 +1,10 @@
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SPCP.Controler.dll.config
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SPCP.Controler.pdb
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SCPC.Model.dll
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SCPC.Util.dll
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SCPC.Model.pdb
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\bin\Debug\SCPC.Util.pdb
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\obj\Debug\SPCP.Controler.dll
+C:\Users\Flavio\Documents\GitHub\SPCP\SCPC.Controller\obj\Debug\SPCP.Controler.pdb
