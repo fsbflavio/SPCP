@@ -14,6 +14,7 @@ namespace SPCP.View
         public static String LabelUnidadeMedida = "Unidade de Medida";
         public static String LabelGrupoItemEstoque = "Grupo do Item de Estoque";
 
+        public static String teste = "tete";
 
 
 
